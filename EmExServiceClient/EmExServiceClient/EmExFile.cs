@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EmExServiceClient.DocumentService;
 using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Net.Mime;
-using System.Security.Cryptography.X509Certificates;
-using System.ServiceModel.Configuration;
-using System.Text;
-using System.Threading.Tasks;
-using EmExServiceClient.DocumentService;
 
 namespace EmExServiceClient
 {

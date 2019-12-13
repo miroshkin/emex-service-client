@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EmExServiceClient.DocumentService;
+using EmExServiceClient.Tasks;
 
 namespace EmExServiceClient
 {
@@ -11,9 +12,8 @@ namespace EmExServiceClient
     {
         static void Main(string[] args)
         {
-            DocumentPortalClient client = new DocumentPortalClient();
-            var result = client.CreateActContrafact(new AuthentificationData(), 8537, true, DocumentOptions.ReturnPDF, 1, null, 1);
-            EmExFile.SaveAndOpen(result);
+            IExecutable task = new Intraservice174908();
+            task.Execute();
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.ContragentDebt" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.ContragentDebt" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ContragentDebtNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimDebt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClaimReviseDateBeg" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClaimReviseDateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ContragentINN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="ContragentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMailBcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMailFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMailTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PublicOffer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContragentDebtNotification" nillable="true" type="tns:ContragentDebtNotification" />
+</xs:schema>

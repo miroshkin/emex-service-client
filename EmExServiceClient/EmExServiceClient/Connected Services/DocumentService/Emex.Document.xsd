@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Document" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Document" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="DocumentOptions">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Print" />
+          <xs:enumeration value="Send" />
+          <xs:enumeration value="ReturnExcel" />
+          <xs:enumeration value="ReturnImage" />
+          <xs:enumeration value="ReturnPDF" />
+          <xs:enumeration value="ReturnCSV" />
+          <xs:enumeration value="Save">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ReturnDoc">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="DocumentOptions" nillable="true" type="tns:DocumentOptions" />
+  <xs:complexType name="ArrayOfPriceList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceList" nillable="true" type="tns:PriceList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceList" nillable="true" type="tns:ArrayOfPriceList" />
+  <xs:complexType name="PriceList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuyPriceRUR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DetailNameCust" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNameRus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceList" nillable="true" type="tns:PriceList" />
+  <xs:complexType name="UserMailing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attachment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="From" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendLetter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="To" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserMailing" nillable="true" type="tns:UserMailing" />
+  <xs:complexType name="ArrayOfInvoiceTypeOneHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceTypeOneHeader" nillable="true" type="tns:InvoiceTypeOneHeader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceTypeOneHeader" nillable="true" type="tns:ArrayOfInvoiceTypeOneHeader" />
+  <xs:complexType name="InvoiceTypeOneHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountCustNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="AccountNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="BuyerAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuyerINN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuyerKPP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuyerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Consignee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Consigner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Invoice2Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Invoice2Number" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceTypeOneId" type="xs:int" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SellerAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SellerINN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SellerKPP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SellerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bitKazah" type="xs:int" />
+      <xs:element minOccurs="0" name="timestamp" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceTypeOneHeader" nillable="true" type="tns:InvoiceTypeOneHeader" />
+  <xs:complexType name="ArrayOfInvoiceTypeOneDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceTypeOneDetail" nillable="true" type="tns:InvoiceTypeOneDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceTypeOneDetail" nillable="true" type="tns:ArrayOfInvoiceTypeOneDetail" />
+  <xs:complexType name="InvoiceTypeOneDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountsDetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarcodeData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Box" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeTNVED" type="xs:long" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContainerBarcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContainerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DenyDetailComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailQuantity" type="xs:short" />
+      <xs:element minOccurs="0" name="DetailVolume" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DetailWeight" type="xs:int" />
+      <xs:element minOccurs="0" name="GTD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GlobalId" type="xs:long" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoursOfWaiting" type="xs:short" />
+      <xs:element minOccurs="0" name="InvoiceTypeOneDetailId" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceTypeOneId" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationId" type="xs:int" />
+      <xs:element minOccurs="0" name="MakeLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OnlineUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="OnlineUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidHoursOfStorage" type="xs:short" />
+      <xs:element minOccurs="0" name="PositionNumber" type="xs:short" />
+      <xs:element minOccurs="0" name="PriceLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PricePotrebitel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PriceRUR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PriceStorageRUR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PriceStorageSumRUR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PriceSumRUR" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PriceWithoutTax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorOrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubstDetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubstMakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SumOfExciseTax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SumOfTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SumWithoutTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxRate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitNameCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bitKazah" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceTypeOneDetail" nillable="true" type="tns:InvoiceTypeOneDetail" />
+  <xs:simpleType name="DocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Torg12">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Invoice">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvoiceTypeOne">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomerBarcodeFile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PackSheet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Statement">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M11DemandBill">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Torg12WithGrouping">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TTN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TORG2">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ActSurplusTORG2">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M15">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InfoLost">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMR">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InsuranceRequest">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RegionPackSheet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BuhAccountPlan">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Torg12Return">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Upd">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UpdReturn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ukd">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">38</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Counterfeit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">39</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ksf">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">42</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_1">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">49</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_2">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_3">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_4">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_5">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">53</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_6">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">54</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_7">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">55</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_8">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">56</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_9">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">57</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Util_2_10">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">58</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InventoryList">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">59</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InventoryOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InventoryRegister">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">61</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InventoryCollationStatement">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">62</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InventoryResultDirective">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">63</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DueDiligence">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SupplierReturnsRegister">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentType" nillable="true" type="tns:DocumentType" />
+  <xs:simpleType name="DocumentReasonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Account" />
+      <xs:enumeration value="InvoiceClose" />
+      <xs:enumeration value="ClientReturn" />
+      <xs:enumeration value="CMRShipping" />
+      <xs:enumeration value="NoName" />
+      <xs:enumeration value="WMSCloseCollect" />
+      <xs:enumeration value="WMSCloseShipping" />
+      <xs:enumeration value="InvoicesSFProcessingPayment" />
+      <xs:enumeration value="LocalStorageAccount" />
+      <xs:enumeration value="SupplierPenalty" />
+      <xs:enumeration value="SupplierReturn" />
+      <xs:enumeration value="ReturnFromCustomer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BarcodeProcessingPayment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvoicesSFOnlineClientPayment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JointProcessingPayment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OF8WebService">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProtectionFromReturnPayment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SupplierReturnSale">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentReasonType" nillable="true" type="tns:DocumentReasonType" />
+  <xs:complexType name="ArrayOfGTDReportToBankDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GTDReportToBankDetail" nillable="true" type="tns:GTDReportToBankDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGTDReportToBankDetail" nillable="true" type="tns:ArrayOfGTDReportToBankDetail" />
+  <xs:complexType name="GTDReportToBankDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="CountryCode" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDocInf" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateIssue" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExchRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FullNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GtdId" type="xs:long" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ParagrafDogovora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchaseFeature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Summa01" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Summa02" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GTDReportToBankDetail" nillable="true" type="tns:GTDReportToBankDetail" />
+  <xs:complexType name="ArrayOfVEDReportToBankDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VEDReportToBankDetail" type="tns:VEDReportToBankDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVEDReportToBankDetail" nillable="true" type="tns:ArrayOfVEDReportToBankDetail" />
+  <xs:complexType name="VEDReportToBankDetail">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CMRSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ConfirmingDocumentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ConfirmingDocumentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfirmingDocumentSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ConfirmingDocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyCode" type="xs:short" />
+      <xs:element minOccurs="0" name="PriznakPostavki" type="xs:short" />
+      <xs:element minOccurs="0" name="SourceDocumentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StringNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="VEDReportToBankDetailDescriptions" nillable="true" type="tns:ArrayOfVEDReportToBankDetailDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VEDReportToBankDetail" nillable="true" type="tns:VEDReportToBankDetail" />
+  <xs:complexType name="ArrayOfVEDReportToBankDetailDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VEDReportToBankDetailDescription" type="tns:VEDReportToBankDetailDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVEDReportToBankDetailDescription" nillable="true" type="tns:ArrayOfVEDReportToBankDetailDescription" />
+  <xs:complexType name="VEDReportToBankDetailDescription">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="VEDReportToBankDetailDescription" nillable="true" type="tns:VEDReportToBankDetailDescription" />
+  <xs:complexType name="ArrayOfVEDReportToBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VEDReportToBank" nillable="true" type="tns:VEDReportToBank" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVEDReportToBank" nillable="true" type="tns:ArrayOfVEDReportToBank" />
+  <xs:complexType name="VEDReportToBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContragentCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDocument" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+      <xs:element minOccurs="0" name="FirmName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassportDeal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnderlyingDocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VEDReportDetail" nillable="true" type="tns:ArrayOfVEDReportToBankDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VEDReportToBank" nillable="true" type="tns:VEDReportToBank" />
+</xs:schema>

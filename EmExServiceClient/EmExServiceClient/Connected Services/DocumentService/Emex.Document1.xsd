@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Emex.Document" elementFormDefault="qualified" targetNamespace="Emex.Document" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SupplyViolationPenalty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuhOperacia" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailToSend" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmexManagerEmail" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="PenaltyDelaySum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PenaltyRefuseSum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierPenaltyId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplyViolationPenalty" nillable="true" type="tns:SupplyViolationPenalty" />
+</xs:schema>

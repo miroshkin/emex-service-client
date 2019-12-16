@@ -12,7 +12,7 @@ namespace EmExServiceClient
     {
         static void Main(string[] args)
         {
-            IExecutable task = new Intraservice174908();
+            IExecutable task = new Task45091();
             task.Execute();
         }
     }

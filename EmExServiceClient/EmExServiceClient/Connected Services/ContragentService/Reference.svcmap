@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cea61d36-0bd6-4a98-b613-e8818d1a1e2f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4702/Contragent/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8da5af35-fc02-4ca4-ad03-ec427645b108" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="86da9f58-eaaa-4f4e-961b-a248f35f0566" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0324f910-1eec-431a-991d-9ecd7be672eb" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="88fb6696-36b4-4676-9746-8afc64ce5241" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Communication.xsd" MetadataType="Schema" ID="83a96607-de56-4167-a20a-e3719cc020d8" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Document.xsd" MetadataType="Schema" ID="185a82e8-735d-48f1-a602-2930a2417685" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Contragent.xsd" MetadataType="Schema" ID="ee138ba4-70a3-4efa-87d8-6d8cecc4ed2d" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.DetailsHistory.xsd" MetadataType="Schema" ID="db1f1940-4859-45b9-88f2-da92ee7454d0" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="3d3ecb5d-288a-46f7-8ceb-7bebfcf0ab6c" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Stock.xsd" MetadataType="Schema" ID="66b09ba6-d61a-4a7e-b7d8-f174916e1ddb" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.EmexMain.Supplier.xsd" MetadataType="Schema" ID="7227d3c3-3424-4c32-89e3-c0c6608b6b0a" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Supplier.xsd" MetadataType="Schema" ID="5b0b175f-e623-4563-b97b-280fa520f9fb" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Data.xsd" MetadataType="Schema" ID="dfba7fa1-f445-4360-a80f-b726a94bfb18" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Online.xsd" MetadataType="Schema" ID="fb764f2c-c36b-449d-8163-17e4daf3c301" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Delivery.xsd" MetadataType="Schema" ID="a1fbbcdf-a910-460f-9cb7-25bf86fe401c" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Buh.xsd" MetadataType="Schema" ID="1a81de8f-5a95-48d7-a51d-fa8126eb998c" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="System.Collections.Specialized.xsd" MetadataType="Schema" ID="01703bb0-e078-44bc-8023-24468a7918be" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+    <MetadataFile FileName="Emex.Interaction.xsd" MetadataType="Schema" ID="25f3b8bb-18f8-405b-9b10-6fb8f223ec15" SourceId="1" SourceUrl="http://localhost:4702/Contragent/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

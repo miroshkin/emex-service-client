@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ContragentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\DocumentService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,10 +61,237 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Intraservice\Intraservice174908.cs" />
+    <Compile Include="Tasks\Task45059.cs" />
     <Compile Include="Tasks\Task45091.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\ContragentService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Buh.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Communication.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Contragent.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Delivery.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.DetailsHistory.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Document.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.EmexMain.Supplier.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Interaction.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Online.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Stock.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\Emex.Supplier.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultActionLock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultActRecycling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfAccountCard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfAccountCard2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfAccountCard3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfAccountDetailViewItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfActRecycling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfChangeAnswerLogLine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfConsumer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfContragent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfContragentDocumentSetting.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfContragentIdentity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfCustomerDiscountHistoryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfCustomerHistoryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfCustomerIdentity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfCustomerScheduleAttribute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfCustomerSearchResultItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDecommission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDecommissionDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDeleteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDenyStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDenyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDetailSubstituteDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDiadocDocumentStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDocumentCorrectionCard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfDocumentReturnCard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfLocalStorageAccount2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfLocalStorageAccountNew.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfMake.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfRegion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfSalesHistoryCommon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfSalesHistoryDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfSupplierBase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfSupplierDocumentReturnCard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfSuppliersReturnsAuthority.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfTransportCompany.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultArrayOfUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultboolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultCustomerBalance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultCustomerDelivery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultCustomerDiscountManual.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultCustomerIdentity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultCustomerScheduleAttribute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultDeliveryRegionType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultDetailDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultlong.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultNullableOfdateTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultstring.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultSupplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultSuppliersReturnsAuthority.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\EmExServiceClient.ContragentService.OperationResultTupleOfbooleanstringlonglong.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContragentService\service.wsdl" />
+    <None Include="Connected Services\ContragentService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\System.Collections.Specialized.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContragentService\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\DocumentService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -126,6 +358,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ContragentService\" />
     <WCFMetadataStorage Include="Connected Services\DocumentService\" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +373,17 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\ContragentService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ContragentService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ContragentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

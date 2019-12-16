@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+  <xs:complexType name="ActionLock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExpireDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" type="tns:ActionLockState" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="User" nillable="true" type="q1:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionLock" nillable="true" type="tns:ActionLock" />
+  <xs:simpleType name="ActionLockState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Valid" />
+      <xs:enumeration value="Invalid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionLockState" nillable="true" type="tns:ActionLockState" />
+</xs:schema>

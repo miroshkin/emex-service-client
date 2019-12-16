@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Stock" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Stock" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DetailDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNameCust" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNameCustS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNameRus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailWeight" type="xs:int" />
+      <xs:element minOccurs="0" name="MakeId" type="xs:long" />
+      <xs:element minOccurs="0" name="MakeLogo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetailDto" nillable="true" type="tns:DetailDto" />
+  <xs:complexType name="ArrayOfMake">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Make" nillable="true" type="tns:Make" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMake" nillable="true" type="tns:ArrayOfMake" />
+  <xs:complexType name="Make">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Emex.Communication" base="q1:NullableDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MakeId" type="xs:long" />
+          <xs:element minOccurs="0" name="MakeLogo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Make" nillable="true" type="tns:Make" />
+  <xs:complexType name="ArrayOfPrintSticker">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrintSticker" type="tns:PrintSticker" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrintSticker" nillable="true" type="tns:ArrayOfPrintSticker" />
+  <xs:complexType name="PrintSticker">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderDetailSubId" type="xs:long" />
+      <xs:element minOccurs="0" name="Portion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintSticker" nillable="true" type="tns:PrintSticker" />
+  <xs:simpleType name="StickerPrintMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A4Printer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="StickerPrinter">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StickerPrintMode" nillable="true" type="tns:StickerPrintMode" />
+  <xs:complexType name="ArrayOfDetailSubstituteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetailSubstituteDto" nillable="true" type="tns:DetailSubstituteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetailSubstituteDto" nillable="true" type="tns:ArrayOfDetailSubstituteDto" />
+  <xs:complexType name="DetailSubstituteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correlation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateChange" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeId" type="xs:int" />
+      <xs:element minOccurs="0" name="MakeLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubstType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetailSubstituteDto" nillable="true" type="tns:DetailSubstituteDto" />
+</xs:schema>

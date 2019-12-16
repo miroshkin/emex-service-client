@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Interaction" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Interaction" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfLocationSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationSetting" nillable="true" type="tns:LocationSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationSetting" nillable="true" type="tns:ArrayOfLocationSetting" />
+  <xs:complexType name="LocationSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PropertyType" type="tns:LocationPropertyType" />
+      <xs:element minOccurs="0" name="PropertyValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationSetting" nillable="true" type="tns:LocationSetting" />
+  <xs:simpleType name="LocationPropertyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PointType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MethodOfPayment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Services">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LocationPropertyType" nillable="true" type="tns:LocationPropertyType" />
+</xs:schema>

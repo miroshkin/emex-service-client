@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSalesHistoryCommon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesHistoryCommon" nillable="true" type="tns:SalesHistoryCommon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesHistoryCommon" nillable="true" type="tns:ArrayOfSalesHistoryCommon" />
+  <xs:complexType name="SalesHistoryCommon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="CustOrder" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomersGroupsLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailMakeAndNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNameCust" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailPriceRUR" type="xs:float" />
+      <xs:element minOccurs="0" name="IsRowHidden" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="OrderQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="PriceLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubstDetailMakeAndNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubstDetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubstMakeLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesHistoryCommon" nillable="true" type="tns:SalesHistoryCommon" />
+  <xs:complexType name="ArrayOfSalesHistoryDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesHistoryDetail" nillable="true" type="tns:SalesHistoryDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesHistoryDetail" nillable="true" type="tns:ArrayOfSalesHistoryDetail" />
+  <xs:complexType name="SalesHistoryDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuyRUR" type="xs:float" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cost" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateReadyForAccount" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DetSub" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailPriceBuyRUR" type="xs:float" />
+      <xs:element minOccurs="0" name="DetailPriceRUR" type="xs:float" />
+      <xs:element minOccurs="0" name="DocDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GTD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GlobalId" type="xs:long" />
+      <xs:element minOccurs="0" name="InvoicesDetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderDetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="OrderDetailSubId" type="xs:long" />
+      <xs:element minOccurs="0" name="PackerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Portion" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="ReceiptsDetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="ReceiverName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaleRUR" type="xs:float" />
+      <xs:element minOccurs="0" name="StackerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesHistoryDetail" nillable="true" type="tns:SalesHistoryDetail" />
+  <xs:complexType name="ArrayOfDenyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DenyType" nillable="true" type="tns:DenyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDenyType" nillable="true" type="tns:ArrayOfDenyType" />
+  <xs:complexType name="DenyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DenyDetailsTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="DenyDetailsTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DenyType" nillable="true" type="tns:DenyType" />
+  <xs:complexType name="ArrayOfDeleteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeleteType" nillable="true" type="tns:DeleteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeleteType" nillable="true" type="tns:ArrayOfDeleteType" />
+  <xs:complexType name="DeleteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeleteTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="DeleteTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteType" nillable="true" type="tns:DeleteType" />
+  <xs:complexType name="ArrayOfDenyStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DenyStatus" nillable="true" type="tns:DenyStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDenyStatus" nillable="true" type="tns:ArrayOfDenyStatus" />
+  <xs:complexType name="DenyStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DenyDetailsStatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="DenyDetailsStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DenyStatus" nillable="true" type="tns:DenyStatus" />
+  <xs:complexType name="ArrayOfChangeAnswerLogLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangeAnswerLogLine" nillable="true" type="tns:ChangeAnswerLogLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChangeAnswerLogLine" nillable="true" type="tns:ArrayOfChangeAnswerLogLine" />
+  <xs:complexType name="ChangeAnswerLogLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateAdd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Val" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeAnswerLogLine" nillable="true" type="tns:ChangeAnswerLogLine" />
+</xs:schema>

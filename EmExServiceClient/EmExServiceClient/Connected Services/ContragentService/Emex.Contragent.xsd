@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Contragent" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Delivery" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Collections.Specialized" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Online" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element name="ContragentId" type="xs:long" />
+      <xs:element name="GroupId" type="xs:long" />
+      <xs:element minOccurs="0" name="IsRowHidden" type="xs:boolean" />
+      <xs:element name="Logo" nillable="true" type="xs:string" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserEmails" nillable="true" type="xs:string" />
+      <xs:element name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPhones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPosition" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroup" nillable="true" type="tns:ArrayOfGroup" />
+  <xs:complexType name="Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupId" type="xs:long" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:complexType name="ArrayOfCustomerHistoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerHistoryItem" nillable="true" type="tns:CustomerHistoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerHistoryItem" nillable="true" type="tns:ArrayOfCustomerHistoryItem" />
+  <xs:complexType name="CustomerHistoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ChangeTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChangeUser" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="NewValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerHistoryItem" nillable="true" type="tns:CustomerHistoryItem" />
+  <xs:complexType name="Contragent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddAddress" nillable="true" type="tns:Contragent.Address" />
+      <xs:element minOccurs="0" name="AddContact" nillable="true" type="tns:Contragent.Contact" />
+      <xs:element minOccurs="0" name="AddDogovor" nillable="true" type="tns:Contragent.ContragentDogovor" />
+      <xs:element minOccurs="0" name="AddressList" nillable="true" type="tns:ArrayOfContragent.Address" />
+      <xs:element minOccurs="0" name="BanUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="BankAccountDefault" nillable="true" type="tns:Contragent.BankAccount" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfContragent.Contact" />
+      <xs:element minOccurs="0" name="ContragentContactPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoNotSverkaSpam" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Dogovor" nillable="true" type="tns:ArrayOfContragent.ContragentDogovor" />
+      <xs:element minOccurs="0" name="EMails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="KPP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameFull" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OGRN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OKPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OurEmployee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="UserIdAdd" type="xs:int" />
+      <xs:element minOccurs="0" name="ValidateRequisits" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contragent" nillable="true" type="tns:Contragent" />
+  <xs:complexType name="Contragent.Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressContragent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeAddress" type="tns:AddressType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contragent.Address" nillable="true" type="tns:Contragent.Address" />
+  <xs:simpleType name="AddressType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Legal" />
+      <xs:enumeration value="Actual" />
+      <xs:enumeration value="Delivery" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddressType" nillable="true" type="tns:AddressType" />
+  <xs:complexType name="Contragent.Contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactPersonDoljn" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="ContactPersonDoljnDP" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="ContactPersonNameDP" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="ContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:ContactTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contragent.Contact" nillable="true" type="tns:Contragent.Contact" />
+  <xs:simpleType name="ContactTypes">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Unknown">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CEO">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Director">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ChiefAccountant">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Accountant">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Manager">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ReturnDocuments">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ContactTypes" nillable="true" type="tns:ContactTypes" />
+  <xs:complexType name="Contragent.ContragentDogovor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceId" type="xs:short" />
+      <xs:element minOccurs="0" name="ChiefUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="DateBegin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DoNotSverkaSend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DogovorLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DogovorNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasNDS" type="xs:int" />
+      <xs:element minOccurs="0" name="MngrUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="Schet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubSchet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrebovanieId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contragent.ContragentDogovor" nillable="true" type="tns:Contragent.ContragentDogovor" />
+  <xs:complexType name="ArrayOfContragent.Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contragent.Address" nillable="true" type="tns:Contragent.Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContragent.Address" nillable="true" type="tns:ArrayOfContragent.Address" />
+  <xs:complexType name="Contragent.BankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bank" nillable="true" type="tns:Contragent.Bank" />
+      <xs:element minOccurs="0" name="Closed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSCommentPrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSINN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSKPP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSTypeSchetId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserIdAdd" type="xs:long" />
+      <xs:element minOccurs="0" name="UserIdChecked" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contragent.BankAccount" nillable="true" type="tns:Contragent.BankAccount" />
+  <xs:complexType name="Contragent.Bank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BIK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contragent.Bank" nillable="true" type="tns:Contragent.Bank" />
+  <xs:complexType name="ArrayOfContragent.Contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contragent.Contact" nillable="true" type="tns:Contragent.Contact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContragent.Contact" nillable="true" type="tns:ArrayOfContragent.Contact" />
+  <xs:complexType name="ArrayOfContragent.ContragentDogovor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contragent.ContragentDogovor" nillable="true" type="tns:Contragent.ContragentDogovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContragent.ContragentDogovor" nillable="true" type="tns:ArrayOfContragent.ContragentDogovor" />
+  <xs:complexType name="ArrayOfContragent.BankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contragent.BankAccount" nillable="true" type="tns:Contragent.BankAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContragent.BankAccount" nillable="true" type="tns:ArrayOfContragent.BankAccount" />
+  <xs:complexType name="Supplier">
+    <xs:sequence>
+      <xs:element name="DateCreateSupplier" type="xs:dateTime" />
+      <xs:element name="Logo" nillable="true" type="xs:string" />
+      <xs:element name="Password" nillable="true" type="xs:string" />
+      <xs:element name="PasswordFTP" nillable="true" type="xs:string" />
+      <xs:element name="SupplierAddress" nillable="true" type="xs:string" />
+      <xs:element name="SupplierDescription" nillable="true" type="xs:string" />
+      <xs:element name="SupplierForUser" type="xs:long" />
+      <xs:element name="SupplierINN" nillable="true" type="xs:string" />
+      <xs:element name="SupplierId" type="xs:long" />
+      <xs:element name="SupplierName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserForSupplier" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="_supplierGroup" nillable="true" type="tns:Supplier.SupplierGroup" />
+      <xs:element minOccurs="0" name="_supplierStatus" nillable="true" type="tns:Supplier.SupplierStatus" />
+      <xs:element minOccurs="0" name="buhContragentId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Supplier" nillable="true" type="tns:Supplier" />
+  <xs:complexType name="Supplier.SupplierGroup">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Supplier.SupplierGroup" nillable="true" type="tns:Supplier.SupplierGroup" />
+  <xs:complexType name="Supplier.SupplierStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bitAllowTakeWithoutInvoice" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitAutoDistribution" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitBalanceMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitBallanceInSupplierCurrency" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitBarCode" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitConterminousDocuments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitInvoiceAutoClose" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitNeedWeightOnReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitNoWeight" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitOrderPrice" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitPriceMutation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitRequiredCoordination" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitUseProgramUploadInvoice" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitUseProgramUploadPricelists" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bitWhiteSupplier" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Supplier.SupplierStatus" nillable="true" type="tns:Supplier.SupplierStatus" />
+  <xs:complexType name="ArrayOfContragent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contragent" nillable="true" type="tns:Contragent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContragent" nillable="true" type="tns:ArrayOfContragent" />
+  <xs:complexType name="ArrayOfSupplierBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplierBase" nillable="true" type="tns:SupplierBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupplierBase" nillable="true" type="tns:ArrayOfSupplierBase" />
+  <xs:complexType name="SupplierBase">
+    <xs:sequence>
+      <xs:element name="Logo" nillable="true" type="xs:string" />
+      <xs:element name="SupplierId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplierBase" nillable="true" type="tns:SupplierBase" />
+  <xs:complexType name="CustomerDiscountManual">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Discounts" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpireDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserLogo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerDiscountManual" nillable="true" type="tns:CustomerDiscountManual" />
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="Customer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Contragent">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Emex.Delivery" minOccurs="0" name="AlternativeTransportCompany" nillable="true" type="q1:TransportCompany" />
+          <xs:element minOccurs="0" name="AnswerCustLogo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CloseComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CloseDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ContractDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ContractNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAccNum" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerActualAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerCityId" type="xs:long" />
+          <xs:element minOccurs="0" name="CustomerContactPersons" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerDeliveryAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerDeliveryAddressAlt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+          <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerPayDelivery" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CustomerTelephones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DirF" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DirFI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DirI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DirO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Discount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DocumentCopies" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="DogovorId" type="xs:long" />
+          <xs:element minOccurs="0" name="ExtraForWeight" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FirmId" type="xs:long" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvoiceCustLogo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsResident" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element name="Logo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MailAnswerCust" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MailBalanceCust" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MailBalanceCustBCC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MailConfidential" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MailDelivery" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Emex.Delivery" minOccurs="0" name="MainTransportCompany" nillable="true" type="q2:TransportCompany" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OnlinePassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OptovikId" type="xs:long" />
+          <xs:element minOccurs="0" name="OptovikTel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartnerStatus" type="tns:PartnerType" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriAltSearch" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PrintPacklist" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ReceiptCustLogo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegistrationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RegistrationEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransportCompanyAlternativeId" type="xs:long" />
+          <xs:element minOccurs="0" name="TransportCompanyGate" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="TransportCompanyGateAlt" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="TransportCompanyId" type="xs:long" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkType" type="tns:WorkType" />
+          <xs:element minOccurs="0" name="_customerContact" nillable="true" type="tns:Customer.CustomerContact" />
+          <xs:element minOccurs="0" name="_customerGroup" nillable="true" type="tns:Customer.CustomerGroup" />
+          <xs:element minOccurs="0" name="_customerStorage" nillable="true" type="tns:Customer.CustomerStorage" />
+          <xs:element minOccurs="0" name="_dispatchSetting" nillable="true" type="tns:Customer.CustomerDispatchSetting" />
+          <xs:element minOccurs="0" name="_сustomerAccount" nillable="true" type="tns:Customer.CustomerAccount" />
+          <xs:element minOccurs="0" name="_сustomerContract" nillable="true" type="tns:Customer.CustomerContract" />
+          <xs:element minOccurs="0" name="_сustomerPrintSetting" nillable="true" type="tns:Customer.CustomerPrintSetting" />
+          <xs:element minOccurs="0" name="_сustomerStatus" nillable="true" type="tns:Customer.CustomerStatus" />
+          <xs:element minOccurs="0" name="bitCustomerBalanceNULL" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bitCustomerClose" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bitNotRunCustomerForTime" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bitPublic" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bitSendAccountWeight" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bitTakeAll" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bitUseGoodsTrellis" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="bitVIPCustomer" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="flagAnswersCust" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="flagBalancesCust" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="flagInvoicesCust" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="flagReceiptsCust" type="xs:unsignedByte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:simpleType name="PartnerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Partner" />
+      <xs:enumeration value="Partner3Rank" />
+      <xs:enumeration value="Companion" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PartnerType" nillable="true" type="tns:PartnerType" />
+  <xs:simpleType name="WorkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AdvancePayment" />
+      <xs:enumeration value="WithoutAdvancePayment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkType" nillable="true" type="tns:WorkType" />
+  <xs:complexType name="Customer.CustomerContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactPersons" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfoSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MailAnswerCust" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telephones" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerContact" nillable="true" type="tns:Customer.CustomerContact" />
+  <xs:complexType name="Customer.CustomerGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerGroup" nillable="true" type="tns:Customer.CustomerGroup" />
+  <xs:complexType name="Customer.CustomerStorage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FreeHoursBase" type="xs:int" />
+      <xs:element minOccurs="0" name="FreeHoursCorrective" type="xs:int" />
+      <xs:element minOccurs="0" name="HoursOfFree" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPayment" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerStorage" nillable="true" type="tns:Customer.CustomerStorage" />
+  <xs:complexType name="Customer.CustomerDispatchSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswersDispatchEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnswersDispatchType" type="xs:int" />
+      <xs:element minOccurs="0" name="BalancesDispatchEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BalancesDispatchEmailBCC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BalancesDispatchType" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoicesDispatchEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoicesDispatchType" type="xs:int" />
+      <xs:element minOccurs="0" name="MailConfidential" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserEmails" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerDispatchSetting" nillable="true" type="tns:Customer.CustomerDispatchSetting" />
+  <xs:complexType name="Customer.CustomerAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FlagAccountsCust" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="FlagAccountsShow" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IsInvoicePrint" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInvoiceSend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInvoiceTypeOnePrint" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInvoiceTypeOneSend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInvoiceTypeOneView" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInvoiceView" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTorg12Print" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTorg12Send" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTorg12View" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUpdPrint" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUpdSend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUpdView" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastAccountNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxDebt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxDebtCoeff" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayDelivery" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerAccount" nillable="true" type="tns:Customer.CustomerAccount" />
+  <xs:complexType name="Customer.CustomerContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContragentId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DogovorId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HasNds" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Schet" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerContract" nillable="true" type="tns:Customer.CustomerContract" />
+  <xs:complexType name="Customer.CustomerPrintSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentCopies" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPrintPackSheet" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerPrintSetting" nillable="true" type="tns:Customer.CustomerPrintSetting" />
+  <xs:complexType name="Customer.CustomerStatus">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Collections.Specialized" minOccurs="0" name="_flags" type="q3:BitVector32" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer.CustomerStatus" nillable="true" type="tns:Customer.CustomerStatus" />
+  <xs:complexType name="ArrayOfCustomerSearchResultItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerSearchResultItem" nillable="true" type="tns:CustomerSearchResultItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerSearchResultItem" nillable="true" type="tns:ArrayOfCustomerSearchResultItem" />
+  <xs:complexType name="CustomerSearchResultItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsClosed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:CustomerSearchResultItemType" />
+      <xs:element minOccurs="0" name="WholesalerLogo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerSearchResultItem" nillable="true" type="tns:CustomerSearchResultItem" />
+  <xs:simpleType name="CustomerSearchResultItemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Wholesaler" />
+      <xs:enumeration value="Consumer" />
+      <xs:enumeration value="Manager" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomerSearchResultItemType" nillable="true" type="tns:CustomerSearchResultItemType" />
+  <xs:complexType name="ArrayOfCustomer.CustomerGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer.CustomerGroup" nillable="true" type="tns:Customer.CustomerGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer.CustomerGroup" nillable="true" type="tns:ArrayOfCustomer.CustomerGroup" />
+  <xs:complexType name="ArrayOfCustomerIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerIdentity" nillable="true" type="tns:CustomerIdentity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerIdentity" nillable="true" type="tns:ArrayOfCustomerIdentity" />
+  <xs:complexType name="CustomerIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="INN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerIdentity" nillable="true" type="tns:CustomerIdentity" />
+  <xs:complexType name="ArrayOfContragentDocumentSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContragentDocumentSetting" nillable="true" type="tns:ContragentDocumentSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContragentDocumentSetting" nillable="true" type="tns:ArrayOfContragentDocumentSetting" />
+  <xs:complexType name="ContragentDocumentSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Copies" type="xs:unsignedByte" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Emex.Delivery" minOccurs="0" name="GatheringSchemes" type="q4:GatheringSchemeType" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="Options" type="q5:DocumentOptions" />
+      <xs:element minOccurs="0" name="PrinterName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="ReasonType" type="q6:DocumentReasonType" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="Type" type="q7:DocumentType" />
+      <xs:element minOccurs="0" name="VersionId" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionNumber" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContragentDocumentSetting" nillable="true" type="tns:ContragentDocumentSetting" />
+  <xs:complexType name="CustomerDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalTransporterContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BoxReturnReusing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CommentForAccountButton" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommentForMobileRegion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Recipient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransportCompanyGate" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerDelivery" nillable="true" type="tns:CustomerDelivery" />
+  <xs:complexType name="ArrayOfContragentIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContragentIdentity" nillable="true" type="tns:ContragentIdentity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContragentIdentity" nillable="true" type="tns:ArrayOfContragentIdentity" />
+  <xs:complexType name="ContragentIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContragentIdentity" nillable="true" type="tns:ContragentIdentity" />
+  <xs:complexType name="ArrayOfCustomerScheduleAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerScheduleAttribute" nillable="true" type="tns:CustomerScheduleAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerScheduleAttribute" nillable="true" type="tns:ArrayOfCustomerScheduleAttribute" />
+  <xs:complexType name="CustomerScheduleAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountMode" type="tns:CustomerScheduleAccountMode" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="DAY_1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAY_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAY_3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAY_4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAY_5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAY_6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAY_7" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Days" nillable="true" type="xs:unsignedByte" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="DeliveryRegionTypeAttributes" nillable="true" type="q8:DeliveryRegionType" />
+      <xs:element minOccurs="0" name="IsAlternative" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCustomerSchedule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinSumCostForAutoOut" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MinWeightForAutoOut" type="xs:long" />
+      <xs:element minOccurs="0" name="PrepareForAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ScheduleId" type="xs:long" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Emex.Delivery" minOccurs="0" name="TransportCompany" nillable="true" type="q9:TransportCompany" />
+      <xs:element minOccurs="0" name="TransportCompanyId" type="xs:long" />
+      <xs:element minOccurs="0" name="TransportDays" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerScheduleAttribute" nillable="true" type="tns:CustomerScheduleAttribute" />
+  <xs:simpleType name="CustomerScheduleAccountMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CollectionIsForbidden" />
+      <xs:enumeration value="StandardCharge" />
+      <xs:enumeration value="UrgentCollection" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomerScheduleAccountMode" nillable="true" type="tns:CustomerScheduleAccountMode" />
+  <xs:complexType name="ArrayOfCustomerDiscountHistoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerDiscountHistoryItem" nillable="true" type="tns:CustomerDiscountHistoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerDiscountHistoryItem" nillable="true" type="tns:ArrayOfCustomerDiscountHistoryItem" />
+  <xs:complexType name="CustomerDiscountHistoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Discount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MoneyTurnover" type="xs:decimal" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerDiscountHistoryItem" nillable="true" type="tns:CustomerDiscountHistoryItem" />
+  <xs:complexType name="CustomerBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowAccount" type="xs:short" />
+      <xs:element minOccurs="0" name="AllowOrder" type="xs:short" />
+      <xs:element minOccurs="0" name="BalanceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="DebtAccountBN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DebtOnLocalWarehouse" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DebtOrderBN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Fine" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InorderBN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsPartialReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxDebt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MessageCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageEmEx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OborotPrev" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReadyForAccountBN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReadyForAccountQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoBN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SaldoForPartial" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StorageBN" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SumDetailWeight" type="xs:decimal" />
+      <xs:element minOccurs="0" name="bitCustomerBalance" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerBalance" nillable="true" type="tns:CustomerBalance" />
+</xs:schema>

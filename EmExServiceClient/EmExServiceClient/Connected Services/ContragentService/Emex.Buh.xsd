@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Buh" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Buh" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfLocalStorageAccountNew">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocalStorageAccountNew" nillable="true" type="tns:LocalStorageAccountNew" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalStorageAccountNew" nillable="true" type="tns:ArrayOfLocalStorageAccountNew" />
+  <xs:complexType name="LocalStorageAccountNew">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuhOperaciaId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ContragentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalStorageAccountNewId" type="xs:long" />
+      <xs:element minOccurs="0" name="MonthNumber" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="PrintDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SumMoney" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SumOfTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SumWithoutTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Year" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="buhContragentId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocalStorageAccountNew" nillable="true" type="tns:LocalStorageAccountNew" />
+  <xs:complexType name="ArrayOfLocalStorageAccount2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocalStorageAccount2" nillable="true" type="tns:LocalStorageAccount2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalStorageAccount2" nillable="true" type="tns:ArrayOfLocalStorageAccount2" />
+  <xs:complexType name="LocalStorageAccount2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmountTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BuhBalanceId" type="xs:short" />
+      <xs:element minOccurs="0" name="BuhOperaciaId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ContragentComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContragentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CostWithTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CostWithoutTax" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DogovorDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DogovorLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DogovorNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRegNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocalStorageAccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="MonthNumber" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="PrintDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SendDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Year" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="buhContragentId" type="xs:long" />
+      <xs:element minOccurs="0" name="buhDogovorId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocalStorageAccount2" nillable="true" type="tns:LocalStorageAccount2" />
+</xs:schema>

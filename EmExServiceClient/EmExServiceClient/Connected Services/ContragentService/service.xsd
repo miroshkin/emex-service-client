@@ -1,0 +1,2369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Supplier" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Data" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Online" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Stock" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+  <xs:element name="CreateInventory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="decommissionList" nillable="true" type="q1:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInventoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CreateInventoryResult" nillable="true" type="q2:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInventoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="processed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInventoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetInventoryListResult" nillable="true" type="q3:OperationResultArrayOfInventory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetRevocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetRevocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SetRevocationResult" nillable="true" type="q4:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunOverSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceSFLostId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunOverSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="RunOverSetResult" nillable="true" type="q5:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecreateReturnDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceSFLostId" type="xs:long" />
+        <xs:element minOccurs="0" name="typeLost" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecreateReturnDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="RecreateReturnDocumentResult" nillable="true" type="q6:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentCorrectionCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="customerLogo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="documentType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentCorrectionCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetDocumentCorrectionCardsResult" nillable="true" type="q7:OperationResultArrayOfDocumentCorrectionCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActualUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActualUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetActualUsersResult" nillable="true" type="q8:OperationResultArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetGroupsResult" nillable="true" type="q9:OperationResultArrayOfGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="groupId" type="xs:long" />
+        <xs:element minOccurs="0" name="userEmails" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateUserDataResult" nillable="true" type="q10:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPasswordUserToEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="connUserId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPasswordUserToEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendPasswordUserToEmailResult" nillable="true" type="q11:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetSalesHistoryCommon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="detailNum" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetSalesHistoryCommonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_GetSalesHistoryCommonResult" nillable="true" type="q12:OperationResultArrayOfSalesHistoryCommon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetSalesHistoryDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="orderDetailId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="globalId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetSalesHistoryDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_GetSalesHistoryDetailResult" nillable="true" type="q13:OperationResultArrayOfSalesHistoryDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_VerifyInvoiceBeforDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceLogo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="invoiceNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_VerifyInvoiceBeforDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_VerifyInvoiceBeforDeleteResult" nillable="true" type="q14:OperationResultTupleOfbooleanstringlonglong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeAnswerComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeAnswerCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_ChangeAnswerCommentResult" nillable="true" type="q15:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeQuantity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" type="xs:long" />
+        <xs:element minOccurs="0" name="quantity" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeQuantityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_ChangeQuantityResult" nillable="true" type="q16:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_DeleteInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceId" type="xs:long" />
+        <xs:element minOccurs="0" name="supplierDeliveryId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_DeleteInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_DeleteInvoiceResult" nillable="true" type="q17:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetDenyTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetDenyTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_GetDenyTypesResult" nillable="true" type="q18:OperationResultArrayOfDenyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetDeleteTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetDeleteTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_GetDeleteTypesResult" nillable="true" type="q19:OperationResultArrayOfDeleteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetDenyStatuses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetDenyStatusesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_GetDenyStatusesResult" nillable="true" type="q20:OperationResultArrayOfDenyStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_RemoveDenyDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_RemoveDenyDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_RemoveDenyDetailsResult" nillable="true" type="q21:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_AddDenyDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailId" type="xs:long" />
+        <xs:element minOccurs="0" name="denyDetailTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="comments" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="discount" type="xs:float" />
+        <xs:element minOccurs="0" name="statusId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_AddDenyDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_AddDenyDetailsResult" nillable="true" type="q22:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_RemoveONLY">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="globalId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_RemoveONLYResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_RemoveONLYResult" nillable="true" type="q23:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetChangeAnswerLogLines">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_GetChangeAnswerLogLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_GetChangeAnswerLogLinesResult" nillable="true" type="q24:OperationResultArrayOfChangeAnswerLogLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_CloseOrderByDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" type="xs:long" />
+        <xs:element minOccurs="0" name="bitStatistic" type="xs:boolean" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerComment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_CloseOrderByDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_CloseOrderByDetailResult" nillable="true" type="q25:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeQuantityByInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeQuantityByInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_ChangeQuantityByInvoiceResult" nillable="true" type="q26:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeQuantity_2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" type="xs:long" />
+        <xs:element minOccurs="0" name="quantity" type="xs:long" />
+        <xs:element minOccurs="0" name="bitStatistic" type="xs:boolean" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerComment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeQuantity_2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_ChangeQuantity_2Result" nillable="true" type="q27:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeDeliveryType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetailsHistory_ChangeDeliveryTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DetailsHistory_ChangeDeliveryTypeResult" nillable="true" type="q28:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="detailNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="make" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="FindDetailResult" nillable="true" type="q29:OperationResultDetailDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllDetailSubstitutes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="detailId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllDetailSubstitutesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteAllDetailSubstitutesResult" nillable="true" type="q30:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMakes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMakesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetMakesResult" nillable="true" type="q31:OperationResultArrayOfMake" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthorities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthoritiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSupplierReturnAuthoritiesResult" nillable="true" type="q32:OperationResultArrayOfSuppliersReturnsAuthority" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthority">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierReturnAuthorityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthorityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSupplierReturnAuthorityResult" nillable="true" type="q33:OperationResultSuppliersReturnsAuthority" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthorityBySupplierIdAndBarcode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" type="xs:long" />
+        <xs:element minOccurs="0" name="barcode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthorityBySupplierIdAndBarcodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSupplierReturnAuthorityBySupplierIdAndBarcodeResult" nillable="true" type="q34:OperationResultSuppliersReturnsAuthority" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSupplierReturnAuthority">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Emex.Supplier" minOccurs="0" name="supplierReturnAuthority" nillable="true" type="q35:SuppliersReturnsAuthorityModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSupplierReturnAuthorityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="AddSupplierReturnAuthorityResult" nillable="true" type="q36:OperationResultint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSupplierReturnAuthority">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Emex.Supplier" minOccurs="0" name="supplierReturnAuthority" nillable="true" type="q37:SuppliersReturnsAuthorityModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSupplierReturnAuthorityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateSupplierReturnAuthorityResult" nillable="true" type="q38:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSupplierReturnAuthorityState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" type="xs:long" />
+        <xs:element minOccurs="0" name="supplierReturnAuthorityId" type="xs:int" />
+        <xs:element minOccurs="0" name="authorityState" type="xs:unsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSupplierReturnAuthorityStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SetSupplierReturnAuthorityStateResult" nillable="true" type="q39:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSupplierReturnAuthorityScanUrl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" type="xs:long" />
+        <xs:element minOccurs="0" name="supplierReturnAuthorityId" type="xs:int" />
+        <xs:element minOccurs="0" name="authorityScanUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSupplierReturnAuthorityScanUrlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SetSupplierReturnAuthorityScanUrlResult" nillable="true" type="q40:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthoritySign">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierLogo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnAuthoritySignResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSupplierReturnAuthoritySignResult" nillable="true" type="q41:OperationResultboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnsAuthorityByBarcode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barcode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierReturnsAuthorityByBarcodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSupplierReturnsAuthorityByBarcodeResult" nillable="true" type="q42:OperationResultSuppliersReturnsAuthority" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerQuantityHoursOfFreeStorage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q43:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerQuantityHoursOfFreeStorageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateCustomerQuantityHoursOfFreeStorageResult" nillable="true" type="q44:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wholesalerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetConsumersResult" nillable="true" type="q45:OperationResultArrayOfConsumer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateConsumer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="consumerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateConsumerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateConsumerResult" nillable="true" type="q46:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateConsumer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q47:ActionLock" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="consumer" nillable="true" type="q48:Consumer" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateConsumerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateConsumerResult" nillable="true" type="q49:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateConsumer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q50:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateConsumerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateConsumerResult" nillable="true" type="q51:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerChangesHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerChangesHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerChangesHistoryResult" nillable="true" type="q52:OperationResultArrayOfCustomerHistoryItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotAnswersMsgToSupplier">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotAnswersMsgToSupplierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendNotAnswersMsgToSupplierResult" nillable="true" type="q53:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotReceiptMsgToSupplier">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotReceiptMsgToSupplierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendNotReceiptMsgToSupplierResult" nillable="true" type="q54:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotReceiptMsgToManager">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotReceiptMsgToManagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendNotReceiptMsgToManagerResult" nillable="true" type="q55:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSuppliersMissingDocuments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSuppliersMissingDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendSuppliersMissingDocumentsResult" nillable="true" type="q56:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateClosingProvodkaForContragents">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateClosingProvodkaForContragentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CreateClosingProvodkaForContragentsResult" nillable="true" type="q57:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportCompanies">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetTransportCompaniesResult" nillable="true" type="q58:OperationResultArrayOfTransportCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveContragentSupplier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="contragent" nillable="true" type="q59:Contragent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveContragentSupplierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SaveContragentSupplierResult" nillable="true" type="q60:OperationResultSupplier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSupplierLogoExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="logo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSupplierLogoExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="IsSupplierLogoExistsResult" nillable="true" type="q61:OperationResultboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewLogoForSupplier">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewLogoForSupplierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetNewLogoForSupplierResult" nillable="true" type="q62:OperationResultstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RepeatEmailToSupplier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierLogo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RepeatEmailToSupplierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="RepeatEmailToSupplierResult" nillable="true" type="q63:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonResidentCustomers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNonResidentCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetNonResidentCustomersResult" nillable="true" type="q64:OperationResultArrayOfContragent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomerSortingServicePayments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomerSortingServicePaymentsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocalStorageSetMonthlyBill">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocalStorageSetMonthlyBillResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocalStorageSetMonthlyBill_v2">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocalStorageSetMonthlyBill_v2Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportOnDebitCredit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="balanceId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="isSupplier" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="buhContragentId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportOnDebitCreditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="ReportOnDebitCreditResult" nillable="true" type="q65:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailingPriceSTAC">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailingPriceSTACResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UserMailingPriceSTACResult" nillable="true" type="q66:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailingPriceSTDF">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailingPriceSTDFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UserMailingPriceSTDFResult" nillable="true" type="q67:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailingPriceSTOC">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailingPriceSTOCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UserMailingPriceSTOCResult" nillable="true" type="q68:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mailingId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserMailingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UserMailingResult" nillable="true" type="q69:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBccMercLostFiles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBccMercLostFilesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBesaMercLostFiles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBesaMercLostFilesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBCCMercFiles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBCCMercFilesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBesaMercFiles">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBesaMercFilesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendReturnsToWmsMinutely">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendReturnsToWmsMinutelyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPDC_Claim">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPDC_ClaimResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMsgToSupplier">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMsgToSupplierResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountDateModifier">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountDateModifierResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAndCloseBuhReestrForDiadocDocuments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAndCloseBuhReestrForDiadocDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSecurityDepositTo1C">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSecurityDepositTo1CResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendReclamationToPdc">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendReclamationToPdcResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuppliers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuppliersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSuppliersResult" nillable="true" type="q70:OperationResultArrayOfSupplierBase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierDocumentReturnCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" type="xs:long" />
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupplierDocumentReturnCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSupplierDocumentReturnCardsResult" nillable="true" type="q71:OperationResultArrayOfSupplierDocumentReturnCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBarcodePicture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderDetailSubId" type="xs:long" />
+        <xs:element minOccurs="0" name="portion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBarcodePictureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBarcodePictureResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDetailsStickers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="details" nillable="true" type="q72:ArrayOfPrintSticker" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="mode" type="q73:StickerPrintMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDetailsStickersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateDetailsStickersResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDocumentStickers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="documents" nillable="true" type="q74:ArrayOfDocumentSticker" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="mode" type="q75:StickerPrintMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDocumentStickersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateDocumentStickersResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTransportDocumentStickers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="documents" nillable="true" type="q76:ArrayOfTransportDocumentSticker" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="mode" type="q77:StickerPrintMode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTransportDocumentStickersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateTransportDocumentStickersResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocalStorageAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="supplierId" type="xs:int" />
+        <xs:element minOccurs="0" name="fromUtcDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="toUtcDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocalStorageAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetLocalStorageAccountsResult" nillable="true" type="q78:OperationResultArrayOfLocalStorageAccountNew" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubstitutes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="detailId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubstitutesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetSubstitutesResult" nillable="true" type="q79:OperationResultArrayOfDetailSubstituteDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="detail" nillable="true" type="q80:DetailDto" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateDetailResult" nillable="true" type="q81:OperationResultlong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="detail" nillable="true" type="q82:DetailDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="AddDetailResult" nillable="true" type="q83:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="detailId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteDetailResult" nillable="true" type="q84:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDetailSubstitute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="detailId" type="xs:long" />
+        <xs:element minOccurs="0" name="substId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="substType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDetailSubstituteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteDetailSubstituteResult" nillable="true" type="q85:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocalStorageAccounts2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="buhBalanceId" type="xs:short" />
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocalStorageAccounts2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetLocalStorageAccounts2Result" nillable="true" type="q86:OperationResultArrayOfLocalStorageAccount2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDiscountManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDiscountManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerDiscountManualResult" nillable="true" type="q87:OperationResultCustomerDiscountManual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerDiscountManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerDiscountManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateCustomerDiscountManualResult" nillable="true" type="q88:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerDiscountManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q89:ActionLock" />
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="discount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="expireDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerDiscountManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerDiscountManualResult" nillable="true" type="q90:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerDiscountManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q91:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerDiscountManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateCustomerDiscountManualResult" nillable="true" type="q92:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsContragentWorkDirectDeliveryUpd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsContragentWorkDirectDeliveryUpdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="IsContragentWorkDirectDeliveryUpdResult" nillable="true" type="q93:OperationResultboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustomerDocumentsFlowType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CustomerDocumentsFlowTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CustomerDocumentsFlowTypeResult" nillable="true" type="q94:OperationResultNullableOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinDateUpd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinDateUpdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetMinDateUpdResult" nillable="true" type="q95:OperationResultNullableOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtilizationFinalize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtilizationFinalizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UtilizationFinalizeResult" nillable="true" type="q96:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtilizationCreate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtilizationCreateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UtilizationCreateResult" nillable="true" type="q97:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDecommissionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDecommissionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetDecommissionListResult" nillable="true" type="q98:OperationResultArrayOfDecommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDecommissionDetailsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recycledDocumentId" type="xs:int" />
+        <xs:element minOccurs="0" name="recyclingType" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDecommissionDetailsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetDecommissionDetailsListResult" nillable="true" type="q99:OperationResultArrayOfDecommissionDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackDetailDecommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recycledDocumentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackDetailDecommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="RollbackDetailDecommissionResult" nillable="true" type="q100:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDetailsToUtilization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recycledDocumentId" type="xs:int" />
+        <xs:element xmlns:q101="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="detailIdList" nillable="true" type="q101:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendDetailsToUtilizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendDetailsToUtilizationResult" nillable="true" type="q102:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDecommissionType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="decommissionList" nillable="true" type="q103:ArrayOfint" />
+        <xs:element minOccurs="0" name="type" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDecommissionTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SetDecommissionTypeResult" nillable="true" type="q104:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUtilizationDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="decommissionList" nillable="true" type="q105:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUtilizationDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CreateUtilizationDocumentsResult" nillable="true" type="q106:OperationResultint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="customerLogo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetAccountCardsResult" nillable="true" type="q107:OperationResultArrayOfAccountCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountCards2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerLogo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountCards2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetAccountCards2Result" nillable="true" type="q108:OperationResultArrayOfAccountCard2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountCards3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerLogo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountCards3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetAccountCards3Result" nillable="true" type="q109:OperationResultArrayOfAccountCard3" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiadocDocumentStatuses">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiadocDocumentStatusesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetDiadocDocumentStatusesResult" nillable="true" type="q110:OperationResultArrayOfDiadocDocumentStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentReturnCards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="customerLogo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taken" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentReturnCardsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetDocumentReturnCardsResult" nillable="true" type="q111:OperationResultArrayOfDocumentReturnCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetAccountDetailsResult" nillable="true" type="q112:OperationResultArrayOfAccountDetailViewItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAliveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isIncludeClosed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomersResult" nillable="true" type="q113:OperationResultArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCustomersByContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isIncludeClosed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCustomersByContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SearchCustomersByContextResult" nillable="true" type="q114:OperationResultArrayOfCustomerSearchResultItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByContragentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByContragentIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerByContragentIdResult" nillable="true" type="q115:OperationResultCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroups">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerGroupsResult" nillable="true" type="q116:OperationResultArrayOfCustomer.CustomerGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerIdentities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerIdentitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerIdentitiesResult" nillable="true" type="q117:OperationResultArrayOfCustomerIdentity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerIdentitiesBuhContragent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isIncludeClosed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerIdentitiesBuhContragentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerIdentitiesBuhContragentResult" nillable="true" type="q118:OperationResultArrayOfCustomerIdentity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDocumentSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDocumentSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerDocumentSettingsResult" nillable="true" type="q119:OperationResultArrayOfContragentDocumentSetting" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateCustomerGroupResult" nillable="true" type="q120:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q121:ActionLock" />
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+        <xs:element minOccurs="0" name="customerGroupId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerGroupResult" nillable="true" type="q122:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q123:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateCustomerGroupResult" nillable="true" type="q124:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerPartnerType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerPartnerTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateCustomerPartnerTypeResult" nillable="true" type="q125:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerPartnerType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q126:ActionLock" />
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="partnerType" type="q127:PartnerType" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerPartnerTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerPartnerTypeResult" nillable="true" type="q128:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerPartnerType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q129:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerPartnerTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateCustomerPartnerTypeResult" nillable="true" type="q130:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerWorkType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerWorkTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateCustomerWorkTypeResult" nillable="true" type="q131:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerWorkType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q132:ActionLock" />
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="workType" type="q133:WorkType" />
+        <xs:element minOccurs="0" name="expireDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerWorkTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerWorkTypeResult" nillable="true" type="q134:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerWorkType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q135:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerWorkTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateCustomerWorkTypeResult" nillable="true" type="q136:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlockCustomerWork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlockCustomerWorkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BlockCustomerWorkResult" nillable="true" type="q137:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnblockCustomerWork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnblockCustomerWorkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UnblockCustomerWorkResult" nillable="true" type="q138:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDeliveryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerDeliveryResult" nillable="true" type="q139:OperationResultCustomerDelivery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="customerDelivery" nillable="true" type="q140:CustomerDelivery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerDeliveryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerDeliveryResult" nillable="true" type="q141:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportersList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportersListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetTransportersListResult" nillable="true" type="q142:OperationResultArrayOfContragentIdentity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportCompaniesList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportCompaniesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetTransportCompaniesListResult" nillable="true" type="q143:OperationResultArrayOfContragentIdentity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReplaceDeliveryRegionType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="customerLogo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="typeFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="typeTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReplaceDeliveryRegionTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="ReplaceDeliveryRegionTypeResult" nillable="true" type="q144:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerScheduleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerScheduleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerScheduleListResult" nillable="true" type="q145:OperationResultArrayOfCustomerScheduleAttribute" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrimaryDeliveryRegionType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrimaryDeliveryRegionTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetPrimaryDeliveryRegionTypeResult" nillable="true" type="q146:OperationResultDeliveryRegionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportCompanySchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransportCompanyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransportCompanyScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetTransportCompanyScheduleResult" nillable="true" type="q147:OperationResultCustomerScheduleAttribute" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAltDeliveryRegionType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAltDeliveryRegionTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetAltDeliveryRegionTypeResult" nillable="true" type="q148:OperationResultDeliveryRegionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerPrimaryTransportCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="newTransportCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="oldTransportCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerPrimaryTransportCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerPrimaryTransportCompanyResult" nillable="true" type="q149:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerAlternativeTransportCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="newTransportCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="oldTransportCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerAlternativeTransportCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerAlternativeTransportCompanyResult" nillable="true" type="q150:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomerPrimaryTransportCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="transportCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomerPrimaryTransportCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteCustomerPrimaryTransportCompanyResult" nillable="true" type="q151:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomerAlternativeTransportCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="transportCompanyId" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomerAlternativeTransportCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteCustomerAlternativeTransportCompanyResult" nillable="true" type="q152:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerScheduleAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="customerScheduleAttribute" nillable="true" type="q153:CustomerScheduleAttribute" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerScheduleAttributeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerScheduleAttributeResult" nillable="true" type="q154:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecyclingActs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateBegin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecyclingActsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetRecyclingActsResult" nillable="true" type="q155:OperationResultArrayOfActRecycling" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecyclingAct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecyclingActResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetRecyclingActResult" nillable="true" type="q156:OperationResultActRecycling" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationsByOptovikId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="optovikId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationsByOptovikIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetLocationsByOptovikIdResult" nillable="true" type="q157:OperationResultArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetRegionsResult" nillable="true" type="q158:OperationResultArrayOfRegion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="l" nillable="true" type="q159:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="InsertLocationResult" nillable="true" type="q160:OperationResultint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="locationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateLocationResult" nillable="true" type="q161:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q162:ActionLock" />
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="location" nillable="true" type="q163:Location" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateLocationResult" nillable="true" type="q164:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q165:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateLocationResult" nillable="true" type="q166:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocationBitPublish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="locationId" type="xs:long" />
+        <xs:element minOccurs="0" name="bitPublish" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocationBitPublishResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateLocationBitPublishResult" nillable="true" type="q167:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateLocationRegion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="locationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateLocationRegionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateLocationRegionResult" nillable="true" type="q168:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocationRegion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q169:ActionLock" />
+        <xs:element minOccurs="0" name="locationId" type="xs:long" />
+        <xs:element minOccurs="0" name="region" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLocationRegionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateLocationRegionResult" nillable="true" type="q170:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateLocationRegion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q171:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateLocationRegionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateLocationRegionResult" nillable="true" type="q172:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="locationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteLocationResult" nillable="true" type="q173:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDiscountHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDiscountHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCustomerDiscountHistoryResult" nillable="true" type="q174:OperationResultArrayOfCustomerDiscountHistoryItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateCustomerDiscountResult" nillable="true" type="q175:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q176:ActionLock" />
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="customer" nillable="true" type="q177:Customer" />
+        <xs:element minOccurs="0" name="expireStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="expireEndDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerDiscountResult" nillable="true" type="q178:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerDiscount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q179:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdateCustomerDiscountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdateCustomerDiscountResult" nillable="true" type="q180:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastCustomerBalanceCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastCustomerBalanceCalculationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetLastCustomerBalanceCalculationResult" nillable="true" type="q181:OperationResultCustomerBalance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateCustomerBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateCustomerBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CalculateCustomerBalanceResult" nillable="true" type="q182:OperationResultCustomerBalance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetPreviousCustomerResult" nillable="true" type="q183:OperationResultCustomerIdentity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdatePreviousCustomerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdatePreviousCustomerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdatePreviousCustomerIdResult" nillable="true" type="q184:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePreviousCustomerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q185:ActionLock" />
+        <xs:element minOccurs="0" name="customerId" type="xs:long" />
+        <xs:element minOccurs="0" name="prevCustomerId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePreviousCustomerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdatePreviousCustomerIdResult" nillable="true" type="q186:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdatePreviousCustomerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q187:ActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelUpdatePreviousCustomerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CancelUpdatePreviousCustomerIdResult" nillable="true" type="q188:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerQuantityHoursOfFreeStorage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginUpdateCustomerQuantityHoursOfFreeStorageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="BeginUpdateCustomerQuantityHoursOfFreeStorageResult" nillable="true" type="q189:OperationResultActionLock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerQuantityHoursOfFreeStorage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="actionLock" nillable="true" type="q190:ActionLock" />
+        <xs:element minOccurs="0" name="contragentId" type="xs:long" />
+        <xs:element minOccurs="0" name="quantityHours" type="xs:int" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerQuantityHoursOfFreeStorageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateCustomerQuantityHoursOfFreeStorageResult" nillable="true" type="q191:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

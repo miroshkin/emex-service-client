@@ -1,0 +1,1023 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Communication" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Stock" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.EmexMain.Supplier" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Online" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Delivery" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Buh" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Data" />
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="IsRepeat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult" />
+  <xs:complexType name="OperationResultArrayOfInventory">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfInventory" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q1:ArrayOfInventory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfInventory" nillable="true" type="tns:OperationResultArrayOfInventory" />
+  <xs:complexType name="OperationResultArrayOfDocumentCorrectionCard">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDocumentCorrectionCard" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q2:ArrayOfDocumentCorrectionCard" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDocumentCorrectionCard" nillable="true" type="tns:OperationResultArrayOfDocumentCorrectionCard" />
+  <xs:complexType name="OperationResultArrayOfUser">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfUser" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q3:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfUser" nillable="true" type="tns:OperationResultArrayOfUser" />
+  <xs:complexType name="OperationResultArrayOfGroup">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGroup" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q4:ArrayOfGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfGroup" nillable="true" type="tns:OperationResultArrayOfGroup" />
+  <xs:complexType name="OperationResultstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationObject" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultstring" nillable="true" type="tns:OperationResultstring" />
+  <xs:complexType name="OperationResultArrayOfSalesHistoryCommon">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfSalesHistoryCommon" Namespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" minOccurs="0" name="OperationObject" nillable="true" type="q5:ArrayOfSalesHistoryCommon" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfSalesHistoryCommon" nillable="true" type="tns:OperationResultArrayOfSalesHistoryCommon" />
+  <xs:complexType name="OperationResultArrayOfSalesHistoryDetail">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfSalesHistoryDetail" Namespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" minOccurs="0" name="OperationObject" nillable="true" type="q6:ArrayOfSalesHistoryDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfSalesHistoryDetail" nillable="true" type="tns:OperationResultArrayOfSalesHistoryDetail" />
+  <xs:complexType name="OperationResultTupleOfbooleanstringlonglong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TupleOf{0}{1}{2}{3}{#}" Namespace="http://schemas.datacontract.org/2004/07/System">
+            <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+            <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+            <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+            <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+          </GenericParameter>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OperationObject" nillable="true" type="q7:TupleOfbooleanstringlonglong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultTupleOfbooleanstringlonglong" nillable="true" type="tns:OperationResultTupleOfbooleanstringlonglong" />
+  <xs:complexType name="OperationResultArrayOfDenyType">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDenyType" Namespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" minOccurs="0" name="OperationObject" nillable="true" type="q8:ArrayOfDenyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDenyType" nillable="true" type="tns:OperationResultArrayOfDenyType" />
+  <xs:complexType name="OperationResultArrayOfDeleteType">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDeleteType" Namespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" minOccurs="0" name="OperationObject" nillable="true" type="q9:ArrayOfDeleteType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDeleteType" nillable="true" type="tns:OperationResultArrayOfDeleteType" />
+  <xs:complexType name="OperationResultArrayOfDenyStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDenyStatus" Namespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" minOccurs="0" name="OperationObject" nillable="true" type="q10:ArrayOfDenyStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDenyStatus" nillable="true" type="tns:OperationResultArrayOfDenyStatus" />
+  <xs:complexType name="OperationResultArrayOfChangeAnswerLogLine">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfChangeAnswerLogLine" Namespace="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Emex.DetailsHistory" minOccurs="0" name="OperationObject" nillable="true" type="q11:ArrayOfChangeAnswerLogLine" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfChangeAnswerLogLine" nillable="true" type="tns:OperationResultArrayOfChangeAnswerLogLine" />
+  <xs:complexType name="OperationResultDetailDto">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DetailDto" Namespace="http://schemas.datacontract.org/2004/07/Emex.Stock" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="OperationObject" nillable="true" type="q12:DetailDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultDetailDto" nillable="true" type="tns:OperationResultDetailDto" />
+  <xs:complexType name="OperationResultArrayOfMake">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfMake" Namespace="http://schemas.datacontract.org/2004/07/Emex.Stock" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="OperationObject" nillable="true" type="q13:ArrayOfMake" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfMake" nillable="true" type="tns:OperationResultArrayOfMake" />
+  <xs:complexType name="NullableDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNullOrEmpty" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NullableDataContract" nillable="true" type="tns:NullableDataContract" />
+  <xs:complexType name="OperationResultArrayOfSuppliersReturnsAuthority">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfSuppliersReturnsAuthority" Namespace="http://schemas.datacontract.org/2004/07/Emex.EmexMain.Supplier" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Emex.EmexMain.Supplier" minOccurs="0" name="OperationObject" nillable="true" type="q14:ArrayOfSuppliersReturnsAuthority" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfSuppliersReturnsAuthority" nillable="true" type="tns:OperationResultArrayOfSuppliersReturnsAuthority" />
+  <xs:complexType name="OperationResultSuppliersReturnsAuthority">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SuppliersReturnsAuthority" Namespace="http://schemas.datacontract.org/2004/07/Emex.EmexMain.Supplier" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Emex.EmexMain.Supplier" minOccurs="0" name="OperationObject" nillable="true" type="q15:SuppliersReturnsAuthority" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultSuppliersReturnsAuthority" nillable="true" type="tns:OperationResultSuppliersReturnsAuthority" />
+  <xs:complexType name="OperationResultint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationObject" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultint" nillable="true" type="tns:OperationResultint" />
+  <xs:complexType name="OperationResultboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationObject" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultboolean" nillable="true" type="tns:OperationResultboolean" />
+  <xs:complexType name="OperationResultArrayOfConsumer">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfConsumer" Namespace="http://schemas.datacontract.org/2004/07/Emex.Online" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="OperationObject" nillable="true" type="q16:ArrayOfConsumer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfConsumer" nillable="true" type="tns:OperationResultArrayOfConsumer" />
+  <xs:complexType name="OperationResultArrayOfCustomerHistoryItem">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCustomerHistoryItem" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q17:ArrayOfCustomerHistoryItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfCustomerHistoryItem" nillable="true" type="tns:OperationResultArrayOfCustomerHistoryItem" />
+  <xs:complexType name="OperationResultArrayOfTransportCompany">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTransportCompany" Namespace="http://schemas.datacontract.org/2004/07/Emex.Delivery" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Emex.Delivery" minOccurs="0" name="OperationObject" nillable="true" type="q18:ArrayOfTransportCompany" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfTransportCompany" nillable="true" type="tns:OperationResultArrayOfTransportCompany" />
+  <xs:complexType name="OperationResultSupplier">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Supplier" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q19:Supplier" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultSupplier" nillable="true" type="tns:OperationResultSupplier" />
+  <xs:complexType name="OperationResultArrayOfContragent">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfContragent" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q20:ArrayOfContragent" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfContragent" nillable="true" type="tns:OperationResultArrayOfContragent" />
+  <xs:complexType name="OperationResultArrayOfSupplierBase">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfSupplierBase" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q21:ArrayOfSupplierBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfSupplierBase" nillable="true" type="tns:OperationResultArrayOfSupplierBase" />
+  <xs:complexType name="OperationResultArrayOfSupplierDocumentReturnCard">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfSupplierDocumentReturnCard" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q22:ArrayOfSupplierDocumentReturnCard" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfSupplierDocumentReturnCard" nillable="true" type="tns:OperationResultArrayOfSupplierDocumentReturnCard" />
+  <xs:complexType name="OperationResultArrayOfLocalStorageAccountNew">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfLocalStorageAccountNew" Namespace="http://schemas.datacontract.org/2004/07/Emex.Buh" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Emex.Buh" minOccurs="0" name="OperationObject" nillable="true" type="q23:ArrayOfLocalStorageAccountNew" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfLocalStorageAccountNew" nillable="true" type="tns:OperationResultArrayOfLocalStorageAccountNew" />
+  <xs:complexType name="OperationResultArrayOfDetailSubstituteDto">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDetailSubstituteDto" Namespace="http://schemas.datacontract.org/2004/07/Emex.Stock" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Emex.Stock" minOccurs="0" name="OperationObject" nillable="true" type="q24:ArrayOfDetailSubstituteDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDetailSubstituteDto" nillable="true" type="tns:OperationResultArrayOfDetailSubstituteDto" />
+  <xs:complexType name="OperationResultlong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationObject" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultlong" nillable="true" type="tns:OperationResultlong" />
+  <xs:complexType name="OperationResultArrayOfLocalStorageAccount2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfLocalStorageAccount2" Namespace="http://schemas.datacontract.org/2004/07/Emex.Buh" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Emex.Buh" minOccurs="0" name="OperationObject" nillable="true" type="q25:ArrayOfLocalStorageAccount2" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfLocalStorageAccount2" nillable="true" type="tns:OperationResultArrayOfLocalStorageAccount2" />
+  <xs:complexType name="OperationResultCustomerDiscountManual">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CustomerDiscountManual" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q26:CustomerDiscountManual" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultCustomerDiscountManual" nillable="true" type="tns:OperationResultCustomerDiscountManual" />
+  <xs:complexType name="OperationResultActionLock">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ActionLock" Namespace="http://schemas.datacontract.org/2004/07/Emex.Data" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Emex.Data" minOccurs="0" name="OperationObject" nillable="true" type="q27:ActionLock" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultActionLock" nillable="true" type="tns:OperationResultActionLock" />
+  <xs:complexType name="OperationResultNullableOfdateTime">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="NullableOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System">
+            <GenericParameter Name="dateTime" Namespace="http://www.w3.org/2001/XMLSchema" />
+          </GenericParameter>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationObject" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultNullableOfdateTime" nillable="true" type="tns:OperationResultNullableOfdateTime" />
+  <xs:complexType name="OperationResultArrayOfDecommission">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDecommission" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q28:ArrayOfDecommission" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDecommission" nillable="true" type="tns:OperationResultArrayOfDecommission" />
+  <xs:complexType name="OperationResultArrayOfDecommissionDetail">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDecommissionDetail" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q29:ArrayOfDecommissionDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDecommissionDetail" nillable="true" type="tns:OperationResultArrayOfDecommissionDetail" />
+  <xs:complexType name="OperationResultArrayOfAccountCard">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAccountCard" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q30:ArrayOfAccountCard" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfAccountCard" nillable="true" type="tns:OperationResultArrayOfAccountCard" />
+  <xs:complexType name="OperationResultArrayOfAccountCard2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAccountCard2" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q31:ArrayOfAccountCard2" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfAccountCard2" nillable="true" type="tns:OperationResultArrayOfAccountCard2" />
+  <xs:complexType name="OperationResultArrayOfAccountCard3">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAccountCard3" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q32:ArrayOfAccountCard3" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfAccountCard3" nillable="true" type="tns:OperationResultArrayOfAccountCard3" />
+  <xs:complexType name="OperationResultArrayOfDiadocDocumentStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDiadocDocumentStatus" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q33:ArrayOfDiadocDocumentStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDiadocDocumentStatus" nillable="true" type="tns:OperationResultArrayOfDiadocDocumentStatus" />
+  <xs:complexType name="OperationResultArrayOfDocumentReturnCard">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDocumentReturnCard" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q34:ArrayOfDocumentReturnCard" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfDocumentReturnCard" nillable="true" type="tns:OperationResultArrayOfDocumentReturnCard" />
+  <xs:complexType name="OperationResultArrayOfAccountDetailViewItem">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAccountDetailViewItem" Namespace="http://schemas.datacontract.org/2004/07/Emex.Delivery" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Emex.Delivery" minOccurs="0" name="OperationObject" nillable="true" type="q35:ArrayOfAccountDetailViewItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfAccountDetailViewItem" nillable="true" type="tns:OperationResultArrayOfAccountDetailViewItem" />
+  <xs:complexType name="OperationResultArrayOfCustomer">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCustomer" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q36:ArrayOfCustomer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfCustomer" nillable="true" type="tns:OperationResultArrayOfCustomer" />
+  <xs:complexType name="OperationResultArrayOfCustomerSearchResultItem">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCustomerSearchResultItem" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q37:ArrayOfCustomerSearchResultItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfCustomerSearchResultItem" nillable="true" type="tns:OperationResultArrayOfCustomerSearchResultItem" />
+  <xs:complexType name="OperationResultCustomer">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Customer" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q38:Customer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultCustomer" nillable="true" type="tns:OperationResultCustomer" />
+  <xs:complexType name="OperationResultArrayOfCustomer.CustomerGroup">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCustomer.CustomerGroup" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q39:ArrayOfCustomer.CustomerGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfCustomer.CustomerGroup" nillable="true" type="tns:OperationResultArrayOfCustomer.CustomerGroup" />
+  <xs:complexType name="OperationResultArrayOfCustomerIdentity">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCustomerIdentity" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q40:ArrayOfCustomerIdentity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfCustomerIdentity" nillable="true" type="tns:OperationResultArrayOfCustomerIdentity" />
+  <xs:complexType name="OperationResultArrayOfContragentDocumentSetting">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfContragentDocumentSetting" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q41:ArrayOfContragentDocumentSetting" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfContragentDocumentSetting" nillable="true" type="tns:OperationResultArrayOfContragentDocumentSetting" />
+  <xs:complexType name="OperationResultCustomerDelivery">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CustomerDelivery" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q42:CustomerDelivery" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultCustomerDelivery" nillable="true" type="tns:OperationResultCustomerDelivery" />
+  <xs:complexType name="OperationResultArrayOfContragentIdentity">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfContragentIdentity" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q43:ArrayOfContragentIdentity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfContragentIdentity" nillable="true" type="tns:OperationResultArrayOfContragentIdentity" />
+  <xs:complexType name="OperationResultArrayOfCustomerScheduleAttribute">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCustomerScheduleAttribute" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q44:ArrayOfCustomerScheduleAttribute" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfCustomerScheduleAttribute" nillable="true" type="tns:OperationResultArrayOfCustomerScheduleAttribute" />
+  <xs:complexType name="OperationResultDeliveryRegionType">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DeliveryRegionType" Namespace="http://schemas.datacontract.org/2004/07/Emex.Online" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="OperationObject" nillable="true" type="q45:DeliveryRegionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultDeliveryRegionType" nillable="true" type="tns:OperationResultDeliveryRegionType" />
+  <xs:complexType name="OperationResultCustomerScheduleAttribute">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CustomerScheduleAttribute" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q46:CustomerScheduleAttribute" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultCustomerScheduleAttribute" nillable="true" type="tns:OperationResultCustomerScheduleAttribute" />
+  <xs:complexType name="OperationResultArrayOfActRecycling">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfActRecycling" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q47:ArrayOfActRecycling" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfActRecycling" nillable="true" type="tns:OperationResultArrayOfActRecycling" />
+  <xs:complexType name="OperationResultActRecycling">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ActRecycling" Namespace="http://schemas.datacontract.org/2004/07/Emex.Document" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Emex.Document" minOccurs="0" name="OperationObject" nillable="true" type="q48:ActRecycling" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultActRecycling" nillable="true" type="tns:OperationResultActRecycling" />
+  <xs:complexType name="OperationResultArrayOfLocation">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfLocation" Namespace="http://schemas.datacontract.org/2004/07/Emex.Online" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="OperationObject" nillable="true" type="q49:ArrayOfLocation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfLocation" nillable="true" type="tns:OperationResultArrayOfLocation" />
+  <xs:complexType name="OperationResultArrayOfRegion">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfRegion" Namespace="http://schemas.datacontract.org/2004/07/Emex.Online" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Emex.Online" minOccurs="0" name="OperationObject" nillable="true" type="q50:ArrayOfRegion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfRegion" nillable="true" type="tns:OperationResultArrayOfRegion" />
+  <xs:complexType name="OperationResultArrayOfCustomerDiscountHistoryItem">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCustomerDiscountHistoryItem" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q51:ArrayOfCustomerDiscountHistoryItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultArrayOfCustomerDiscountHistoryItem" nillable="true" type="tns:OperationResultArrayOfCustomerDiscountHistoryItem" />
+  <xs:complexType name="OperationResultCustomerBalance">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CustomerBalance" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q52:CustomerBalance" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultCustomerBalance" nillable="true" type="tns:OperationResultCustomerBalance" />
+  <xs:complexType name="OperationResultCustomerIdentity">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResult{0}" Namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CustomerIdentity" Namespace="http://schemas.datacontract.org/2004/07/Emex.Contragent" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationResult">
+        <xs:sequence>
+          <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Emex.Contragent" minOccurs="0" name="OperationObject" nillable="true" type="q53:CustomerIdentity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationResultCustomerIdentity" nillable="true" type="tns:OperationResultCustomerIdentity" />
+</xs:schema>

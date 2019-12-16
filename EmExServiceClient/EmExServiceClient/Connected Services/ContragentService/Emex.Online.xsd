@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Emex.Online" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Emex.Online" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Delivery" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Emex.Interaction" />
+  <xs:complexType name="ArrayOfConsumer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Consumer" nillable="true" type="tns:Consumer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsumer" nillable="true" type="tns:ArrayOfConsumer" />
+  <xs:complexType name="Consumer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="LocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Consumer" nillable="true" type="tns:Consumer" />
+  <xs:complexType name="DeliveryRegionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeliveryCoeff" type="xs:float" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Emex.Delivery" minOccurs="0" name="DeliveryType" type="q1:CustomerDeliveryType" />
+      <xs:element minOccurs="0" name="IsBkkPayer" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryRegionType" nillable="true" type="tns:DeliveryRegionType" />
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactPersons" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Emails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="LocationUsers" nillable="true" type="tns:ArrayOfLocationUser" />
+      <xs:element minOccurs="0" name="OptovikId" type="xs:long" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Emex.Interaction" minOccurs="0" name="Settings" nillable="true" type="q2:ArrayOfLocationSetting" />
+      <xs:element minOccurs="0" name="Telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypePoint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bitPublish" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="ArrayOfLocationUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationUser" nillable="true" type="tns:LocationUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationUser" nillable="true" type="tns:ArrayOfLocationUser" />
+  <xs:complexType name="LocationUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRoles" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationUser" nillable="true" type="tns:LocationUser" />
+  <xs:complexType name="ArrayOfRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true" type="tns:Region" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegion" nillable="true" type="tns:ArrayOfRegion" />
+  <xs:complexType name="Region">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionParent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Region" nillable="true" type="tns:Region" />
+</xs:schema>

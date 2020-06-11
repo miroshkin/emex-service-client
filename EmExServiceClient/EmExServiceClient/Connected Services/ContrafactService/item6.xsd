@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Core.Services.Entities" />
+  <xs:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ContrafactFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContrafactFilter" nillable="true" type="tns:ContrafactFilter" />
+  <xs:complexType name="ArrayOfContrafactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContrafactInfo" nillable="true" type="tns:ContrafactInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContrafactInfo" nillable="true" type="tns:ArrayOfContrafactInfo" />
+  <xs:complexType name="ContrafactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommentCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContrafactGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="ContrafactGroupStatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="DetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetectDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FeatureAddDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HasAppeal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasModel" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPublish" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelHasPhoto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModelPlaceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatorFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PretenziaNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WaitDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WriteOff" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContrafactInfo" nillable="true" type="tns:ContrafactInfo" />
+  <xs:complexType name="ArrayOfContrafactFeature">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContrafactFeature" nillable="true" type="tns:ContrafactFeature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContrafactFeature" nillable="true" type="tns:ArrayOfContrafactFeature" />
+  <xs:complexType name="ContrafactFeature">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContrafactGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="MarkedImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="MarkedImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Marks" nillable="true" type="tns:ArrayOfImageMarkDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContrafactFeature" nillable="true" type="tns:ContrafactFeature" />
+  <xs:complexType name="ArrayOfImageMarkDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImageMarkDescription" nillable="true" type="tns:ImageMarkDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImageMarkDescription" nillable="true" type="tns:ArrayOfImageMarkDescription" />
+  <xs:complexType name="ImageMarkDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="Xb" type="xs:double" />
+      <xs:element minOccurs="0" name="Xe" type="xs:double" />
+      <xs:element minOccurs="0" name="Yb" type="xs:double" />
+      <xs:element minOccurs="0" name="Ye" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageMarkDescription" nillable="true" type="tns:ImageMarkDescription" />
+  <xs:complexType name="UserAgent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAgent" nillable="true" type="tns:UserAgent" />
+  <xs:complexType name="ContrafactInfoDetalization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageTypes" nillable="true" type="tns:ArrayOfContrafactImageType" />
+      <xs:element minOccurs="0" name="Info" nillable="true" type="tns:ContrafactInfo" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Core.Services.Entities" minOccurs="0" name="Operators" nillable="true" type="q1:ArrayOfUser" />
+      <xs:element minOccurs="0" name="SavedFeatures" nillable="true" type="tns:ArrayOfContrafactFeature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContrafactInfoDetalization" nillable="true" type="tns:ContrafactInfoDetalization" />
+  <xs:complexType name="ArrayOfContrafactImageType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContrafactImageType" nillable="true" type="tns:ContrafactImageType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContrafactImageType" nillable="true" type="tns:ArrayOfContrafactImageType" />
+  <xs:complexType name="ContrafactImageType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContrafactImageType" nillable="true" type="tns:ContrafactImageType" />
+  <xs:complexType name="CounterfeitModelFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CounterfeitModelFilter" nillable="true" type="tns:CounterfeitModelFilter" />
+  <xs:complexType name="ArrayOfCounterfeitModelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CounterfeitModelInfo" nillable="true" type="tns:CounterfeitModelInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCounterfeitModelInfo" nillable="true" type="tns:ArrayOfCounterfeitModelInfo" />
+  <xs:complexType name="CounterfeitModelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailId" type="xs:long" />
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPhoto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelId" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CounterfeitModelInfo" nillable="true" type="tns:CounterfeitModelInfo" />
+  <xs:complexType name="ArrayOfContrafactComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContrafactComment" nillable="true" type="tns:ContrafactComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContrafactComment" nillable="true" type="tns:ArrayOfContrafactComment" />
+  <xs:complexType name="ContrafactComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContrafactComment" nillable="true" type="tns:ContrafactComment" />
+  <xs:complexType name="CounterfeitPretensionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContrafactPretensionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CounterfeitActPretenziaId" type="xs:long" />
+      <xs:element minOccurs="0" name="CounterfeitGroupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CounterfeitId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Emails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasAppeal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPublish" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PretensionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Core.Services.Entities" minOccurs="0" name="User" nillable="true" type="q2:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CounterfeitPretensionData" nillable="true" type="tns:CounterfeitPretensionData" />
+  <xs:complexType name="ArrayOfCounterfeitSupplierInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CounterfeitSupplierInfo" nillable="true" type="tns:CounterfeitSupplierInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCounterfeitSupplierInfo" nillable="true" type="tns:ArrayOfCounterfeitSupplierInfo" />
+  <xs:complexType name="CounterfeitSupplierInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommentCount" type="xs:int" />
+      <xs:element minOccurs="0" name="CounterfeitId" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PretensionList" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SummaryDebt" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SupplierLogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CounterfeitSupplierInfo" nillable="true" type="tns:CounterfeitSupplierInfo" />
+  <xs:complexType name="CounterfeitModelInfoDetalization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CounterfeitModelInfo" nillable="true" type="tns:CounterfeitModelInfo" />
+      <xs:element minOccurs="0" name="SavedFeatures" nillable="true" type="tns:ArrayOfCounterfeitModelFeature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CounterfeitModelInfoDetalization" nillable="true" type="tns:CounterfeitModelInfoDetalization" />
+  <xs:complexType name="ArrayOfCounterfeitModelFeature">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CounterfeitModelFeature" nillable="true" type="tns:CounterfeitModelFeature" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCounterfeitModelFeature" nillable="true" type="tns:ArrayOfCounterfeitModelFeature" />
+  <xs:complexType name="CounterfeitModelFeature">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ImageFileId" type="xs:long" />
+      <xs:element minOccurs="0" name="ImageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModelId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CounterfeitModelFeature" nillable="true" type="tns:CounterfeitModelFeature" />
+  <xs:simpleType name="MessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="CounterfeitModelCreated" />
+      <xs:enumeration value="CounterfeitModelChanged" />
+      <xs:enumeration value="CounterfeitModelDeleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageType" nillable="true" type="tns:MessageType" />
+  <xs:complexType name="ArrayOfSupplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Supplier" nillable="true" type="tns:Supplier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupplier" nillable="true" type="tns:ArrayOfSupplier" />
+  <xs:complexType name="Supplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Supplier" nillable="true" type="tns:Supplier" />
+  <xs:complexType name="ArrayOfPossibleCounterfeitDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PossibleCounterfeitDetail" nillable="true" type="tns:PossibleCounterfeitDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPossibleCounterfeitDetail" nillable="true" type="tns:ArrayOfPossibleCounterfeitDetail" />
+  <xs:complexType name="PossibleCounterfeitDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasRiskTriggered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MakeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PossibleCounterfeitDetail" nillable="true" type="tns:PossibleCounterfeitDetail" />
+  <xs:complexType name="CounterfeitProcessed">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpertDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpertUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ExternalEntityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IncomeDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IncomeUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MakeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CounterfeitProcessed" nillable="true" type="tns:CounterfeitProcessed" />
+</xs:schema>

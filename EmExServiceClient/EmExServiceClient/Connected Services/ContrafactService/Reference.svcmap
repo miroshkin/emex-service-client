@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="60cd64b4-0393-44fa-8503-ccd3fa20c405" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9923/ContrafactService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="53b6f972-0220-4920-a4ac-b22226351fdb" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="9706c576-314c-45ff-836a-47d6c82807f6" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd4" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="ba05b078-3303-4db1-9c59-11aa0203d274" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd5" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="70f15c67-a7b0-451b-9313-3b783683200a" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?disco" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="c3794c5e-ea41-44f9-80f3-01225a099aa3" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd7" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="9d16944a-ac59-4451-973f-b173b8cc6f28" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd0" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="2022bbdc-de95-4382-8d0b-2be7810f57ed" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd6" />
+    <MetadataFile FileName="item6.xsd" MetadataType="Schema" ID="9e9ec4be-3dd9-4f3d-9772-3e3b03e2c5cd" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd2" />
+    <MetadataFile FileName="item7.xsd" MetadataType="Schema" ID="1b089611-8734-467a-adf1-b633ac3e7ab5" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd3" />
+    <MetadataFile FileName="item8.xsd" MetadataType="Schema" ID="3a3c1266-22a3-4792-b28c-062bb28cd49d" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?xsd=xsd8" />
+    <MetadataFile FileName="ContrafactService.wsdl" MetadataType="Wsdl" ID="ae9dbd09-da90-423a-b213-140e7ec38144" SourceId="1" SourceUrl="http://localhost:9923/ContrafactService/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

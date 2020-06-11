@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ContrafactService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Core.Services.Entities" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Emex.IO" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Specialized" />
+      <xsd:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd8" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IContrafactService_GetContrafactsDataList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContrafactsDataList" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetContrafactsDataList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContrafactsDataListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCounterfeitFeatures_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCounterfeitFeatures" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCounterfeitFeatures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCounterfeitFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ChangeDetailNaming_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeDetailNaming" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ChangeDetailNaming_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeDetailNamingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitsData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitsData" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitsData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ReturnContrafactToWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnContrafactToWork" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ReturnContrafactToWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnContrafactToWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateActContrafact_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActContrafact" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateActContrafact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateActContrafactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitModelsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitModelsList" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitModelsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitModelsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCommentsByContrafactId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsByContrafactId" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCommentsByContrafactId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsByContrafactIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCommentToContrafact_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCommentToContrafact" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCommentToContrafact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCommentToContrafactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_InsertCounterfeitPretension_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCounterfeitPretension" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_InsertCounterfeitPretension_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCounterfeitPretensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitSupplierDataList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitSupplierDataList" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitSupplierDataList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitSupplierDataListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitModelData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitModelData" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCounterfeitModelData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterfeitModelDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCounterfeitModelFeatures_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCounterfeitModelFeatures" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCounterfeitModelFeatures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCounterfeitModelFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_DeleteCounterfeitModelFeatures_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCounterfeitModelFeatures" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_DeleteCounterfeitModelFeatures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCounterfeitModelFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_UpdateContrafactModelFeature_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContrafactModelFeature" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_UpdateContrafactModelFeature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContrafactModelFeatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCommentToContrafactModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCommentToContrafactModel" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_AddCommentToContrafactModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCommentToContrafactModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCommentsByContrafactModelId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsByContrafactModelId" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetCommentsByContrafactModelId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsByContrafactModelIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SendNotificationToSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendNotificationToSupplier" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SendNotificationToSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendNotificationToSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ChangeModelPlace_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeModelPlace" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ChangeModelPlace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeModelPlaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateModel" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SendEmailAboutCounterfeitModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailAboutCounterfeitModel" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SendEmailAboutCounterfeitModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailAboutCounterfeitModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetModelStickerDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelStickerDescription" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetModelStickerDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelStickerDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetSuppliersFilterValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliersFilterValues" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetSuppliersFilterValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliersFilterValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ProcessDocsExpects_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDocsExpects" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_ProcessDocsExpects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDocsExpectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_UpdateContrafactListOnFtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContrafactListOnFtp" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_UpdateContrafactListOnFtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContrafactListOnFtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateContrafactQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContrafactQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateContrafactQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateContrafactQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateBuhOperacia_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBuhOperacia" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CreateBuhOperacia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBuhOperaciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_DeleteArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArticle" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_DeleteArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SetContrafactAppeal_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetContrafactAppeal" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SetContrafactAppeal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetContrafactAppealResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetPossibleCounterfeit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPossibleCounterfeit" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_GetPossibleCounterfeit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPossibleCounterfeitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitConfirmed_InputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitConfirmed" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitConfirmed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitConfirmedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitNotConfirmed_InputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitNotConfirmed" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitNotConfirmed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitNotConfirmedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitRefunded_InputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitRefunded" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitRefunded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitRefundedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitProcessed_InputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitProcessed" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_CounterfeitProcessed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CounterfeitProcessedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SetDenyForOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDenyForOrders" />
+  </wsdl:message>
+  <wsdl:message name="IContrafactService_SetDenyForOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDenyForOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConnectionStrings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionStrings" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConnectionStrings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionStringsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetVersions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersions" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetVersions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetEndpoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndpoints" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetEndpoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndpointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_ClearCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCache" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_ClearCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCache" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_SetWcfLogging_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWcfLogging" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_SetWcfLogging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWcfLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComment" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsWorking_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsWorking" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsWorking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsWorkingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounter" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IContrafactService">
+    <wsdl:operation name="GetContrafactsDataList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetContrafactsDataList" message="tns:IContrafactService_GetContrafactsDataList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetContrafactsDataListResponse" message="tns:IContrafactService_GetContrafactsDataList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCounterfeitFeatures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/AddCounterfeitFeatures" message="tns:IContrafactService_AddCounterfeitFeatures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/AddCounterfeitFeaturesResponse" message="tns:IContrafactService_AddCounterfeitFeatures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDetailNaming">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/ChangeDetailNaming" message="tns:IContrafactService_ChangeDetailNaming_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/ChangeDetailNamingResponse" message="tns:IContrafactService_ChangeDetailNaming_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitsData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitsData" message="tns:IContrafactService_GetCounterfeitsData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitsDataResponse" message="tns:IContrafactService_GetCounterfeitsData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnContrafactToWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/ReturnContrafactToWork" message="tns:IContrafactService_ReturnContrafactToWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/ReturnContrafactToWorkResponse" message="tns:IContrafactService_ReturnContrafactToWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateActContrafact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CreateActContrafact" message="tns:IContrafactService_CreateActContrafact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CreateActContrafactResponse" message="tns:IContrafactService_CreateActContrafact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitModelsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitModelsList" message="tns:IContrafactService_GetCounterfeitModelsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitModelsListResponse" message="tns:IContrafactService_GetCounterfeitModelsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentsByContrafactId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetCommentsByContrafactId" message="tns:IContrafactService_GetCommentsByContrafactId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetCommentsByContrafactIdResponse" message="tns:IContrafactService_GetCommentsByContrafactId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCommentToContrafact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/AddCommentToContrafact" message="tns:IContrafactService_AddCommentToContrafact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/AddCommentToContrafactResponse" message="tns:IContrafactService_AddCommentToContrafact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCounterfeitPretension">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/InsertCounterfeitPretension" message="tns:IContrafactService_InsertCounterfeitPretension_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/InsertCounterfeitPretensionResponse" message="tns:IContrafactService_InsertCounterfeitPretension_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitSupplierDataList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitSupplierDataList" message="tns:IContrafactService_GetCounterfeitSupplierDataList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitSupplierDataListResponse" message="tns:IContrafactService_GetCounterfeitSupplierDataList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitModelData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitModelData" message="tns:IContrafactService_GetCounterfeitModelData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetCounterfeitModelDataResponse" message="tns:IContrafactService_GetCounterfeitModelData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCounterfeitModelFeatures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/AddCounterfeitModelFeatures" message="tns:IContrafactService_AddCounterfeitModelFeatures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/AddCounterfeitModelFeaturesResponse" message="tns:IContrafactService_AddCounterfeitModelFeatures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCounterfeitModelFeatures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/DeleteCounterfeitModelFeatures" message="tns:IContrafactService_DeleteCounterfeitModelFeatures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/DeleteCounterfeitModelFeaturesResponse" message="tns:IContrafactService_DeleteCounterfeitModelFeatures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContrafactModelFeature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/UpdateContrafactModelFeature" message="tns:IContrafactService_UpdateContrafactModelFeature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/UpdateContrafactModelFeatureResponse" message="tns:IContrafactService_UpdateContrafactModelFeature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCommentToContrafactModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/AddCommentToContrafactModel" message="tns:IContrafactService_AddCommentToContrafactModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/AddCommentToContrafactModelResponse" message="tns:IContrafactService_AddCommentToContrafactModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentsByContrafactModelId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetCommentsByContrafactModelId" message="tns:IContrafactService_GetCommentsByContrafactModelId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetCommentsByContrafactModelIdResponse" message="tns:IContrafactService_GetCommentsByContrafactModelId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationToSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/SendNotificationToSupplier" message="tns:IContrafactService_SendNotificationToSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/SendNotificationToSupplierResponse" message="tns:IContrafactService_SendNotificationToSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeModelPlace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/ChangeModelPlace" message="tns:IContrafactService_ChangeModelPlace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/ChangeModelPlaceResponse" message="tns:IContrafactService_ChangeModelPlace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CreateModel" message="tns:IContrafactService_CreateModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CreateModelResponse" message="tns:IContrafactService_CreateModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailAboutCounterfeitModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/SendEmailAboutCounterfeitModel" message="tns:IContrafactService_SendEmailAboutCounterfeitModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/SendEmailAboutCounterfeitModelResponse" message="tns:IContrafactService_SendEmailAboutCounterfeitModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelStickerDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetModelStickerDescription" message="tns:IContrafactService_GetModelStickerDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetModelStickerDescriptionResponse" message="tns:IContrafactService_GetModelStickerDescription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliersFilterValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetSuppliersFilterValues" message="tns:IContrafactService_GetSuppliersFilterValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetSuppliersFilterValuesResponse" message="tns:IContrafactService_GetSuppliersFilterValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDocsExpects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/ProcessDocsExpects" message="tns:IContrafactService_ProcessDocsExpects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/ProcessDocsExpectsResponse" message="tns:IContrafactService_ProcessDocsExpects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContrafactListOnFtp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/UpdateContrafactListOnFtp" message="tns:IContrafactService_UpdateContrafactListOnFtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/UpdateContrafactListOnFtpResponse" message="tns:IContrafactService_UpdateContrafactListOnFtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateContrafactQuestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CreateContrafactQuestions" message="tns:IContrafactService_CreateContrafactQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CreateContrafactQuestionsResponse" message="tns:IContrafactService_CreateContrafactQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuhOperacia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CreateBuhOperacia" message="tns:IContrafactService_CreateBuhOperacia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CreateBuhOperaciaResponse" message="tns:IContrafactService_CreateBuhOperacia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/DeleteArticle" message="tns:IContrafactService_DeleteArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/DeleteArticleResponse" message="tns:IContrafactService_DeleteArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetContrafactAppeal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/SetContrafactAppeal" message="tns:IContrafactService_SetContrafactAppeal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/SetContrafactAppealResponse" message="tns:IContrafactService_SetContrafactAppeal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPossibleCounterfeit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/GetPossibleCounterfeit" message="tns:IContrafactService_GetPossibleCounterfeit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/GetPossibleCounterfeitResponse" message="tns:IContrafactService_GetPossibleCounterfeit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitConfirmed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitConfirmed" message="tns:IContrafactService_CounterfeitConfirmed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitConfirmedResponse" message="tns:IContrafactService_CounterfeitConfirmed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitNotConfirmed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitNotConfirmed" message="tns:IContrafactService_CounterfeitNotConfirmed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitNotConfirmedResponse" message="tns:IContrafactService_CounterfeitNotConfirmed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitRefunded">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitRefunded" message="tns:IContrafactService_CounterfeitRefunded_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitRefundedResponse" message="tns:IContrafactService_CounterfeitRefunded_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitProcessed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitProcessed" message="tns:IContrafactService_CounterfeitProcessed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/CounterfeitProcessedResponse" message="tns:IContrafactService_CounterfeitProcessed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDenyForOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContrafactService/SetDenyForOrders" message="tns:IContrafactService_SetDenyForOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContrafactService/SetDenyForOrdersResponse" message="tns:IContrafactService_SetDenyForOrders_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IWmsService">
+    <wsdl:operation name="IsAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/IsAlive" message="tns:IWmsService_IsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/IsAliveResponse" message="tns:IWmsService_IsAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionStrings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetConnectionStrings" message="tns:IWmsService_GetConnectionStrings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetConnectionStringsResponse" message="tns:IWmsService_GetConnectionStrings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetVersions" message="tns:IWmsService_GetVersions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetVersionsResponse" message="tns:IWmsService_GetVersions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEndpoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetEndpoints" message="tns:IWmsService_GetEndpoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetEndpointsResponse" message="tns:IWmsService_GetEndpoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetConfiguration" message="tns:IWmsService_GetConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetConfigurationResponse" message="tns:IWmsService_GetConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/ClearCache" message="tns:IWmsService_ClearCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/ClearCacheResponse" message="tns:IWmsService_ClearCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCache">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetCache" message="tns:IWmsService_GetCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetCacheResponse" message="tns:IWmsService_GetCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetWcfLogging">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/SetWcfLogging" message="tns:IWmsService_SetWcfLogging_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/SetWcfLoggingResponse" message="tns:IWmsService_SetWcfLogging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetComment" message="tns:IWmsService_GetComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetCommentResponse" message="tns:IWmsService_GetComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsWorking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/IsWorking" message="tns:IWmsService_IsWorking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/IsWorkingResponse" message="tns:IWmsService_IsWorking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetCounter" message="tns:IWmsService_GetCounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetCounterResponse" message="tns:IWmsService_GetCounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetStatus" message="tns:IWmsService_GetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetStatusResponse" message="tns:IWmsService_GetStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IContrafactService" type="tns:IContrafactService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetContrafactsDataList">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetContrafactsDataList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCounterfeitFeatures">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/AddCounterfeitFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeDetailNaming">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/ChangeDetailNaming" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitsData">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetCounterfeitsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnContrafactToWork">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/ReturnContrafactToWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateActContrafact">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CreateActContrafact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitModelsList">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetCounterfeitModelsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentsByContrafactId">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetCommentsByContrafactId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCommentToContrafact">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/AddCommentToContrafact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCounterfeitPretension">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/InsertCounterfeitPretension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitSupplierDataList">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetCounterfeitSupplierDataList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCounterfeitModelData">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetCounterfeitModelData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCounterfeitModelFeatures">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/AddCounterfeitModelFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCounterfeitModelFeatures">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/DeleteCounterfeitModelFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContrafactModelFeature">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/UpdateContrafactModelFeature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCommentToContrafactModel">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/AddCommentToContrafactModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentsByContrafactModelId">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetCommentsByContrafactModelId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationToSupplier">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/SendNotificationToSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeModelPlace">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/ChangeModelPlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateModel">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CreateModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailAboutCounterfeitModel">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/SendEmailAboutCounterfeitModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelStickerDescription">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetModelStickerDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliersFilterValues">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetSuppliersFilterValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDocsExpects">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/ProcessDocsExpects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContrafactListOnFtp">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/UpdateContrafactListOnFtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContrafactQuestions">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CreateContrafactQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBuhOperacia">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CreateBuhOperacia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/DeleteArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetContrafactAppeal">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/SetContrafactAppeal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPossibleCounterfeit">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/GetPossibleCounterfeit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitConfirmed">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CounterfeitConfirmed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitNotConfirmed">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CounterfeitNotConfirmed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitRefunded">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CounterfeitRefunded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CounterfeitProcessed">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/CounterfeitProcessed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDenyForOrders">
+      <soap:operation soapAction="http://tempuri.org/IContrafactService/SetDenyForOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContrafactService">
+    <wsdl:port name="BasicHttpBinding_IContrafactService" binding="tns:BasicHttpBinding_IContrafactService">
+      <soap:address location="http://localhost:9923/ContrafactService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

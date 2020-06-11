@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ContrafactService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ContragentService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,17 +61,88 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SecurityCameraService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="EmExFile.cs" />
     <Compile Include="IExecutable.cs" />
     <Compile Include="Intraservice\Intraservice196463.cs" />
+    <Compile Include="Intraservice\IntraserviceCounterfeit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Intraservice\Intraservice174908.cs" />
+    <Compile Include="Tasks\SecurityCamera.cs" />
     <Compile Include="Tasks\Task45059.cs" />
     <Compile Include="Tasks\Task45091.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\ContrafactService\ContrafactService.wsdl" />
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultArrayOfContrafactComment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultArrayOfContrafactInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultArrayOfCounterfeitModelFeature.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultArrayOfCounterfeitModelInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultArrayOfCounterfeitSupplierInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultArrayOfPossibleCounterfeitDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultContrafactInfoDetalization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultCounterfeitModelInfoDetalization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultStickerDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.OperationResultWithFiles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\EmExServiceClient.ContrafactService.Supplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ContrafactService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ContrafactService\item8.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ContragentService\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -354,13 +430,37 @@
     <None Include="Connected Services\DocumentService\System.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\SecurityCameraService\EmExServiceClient.SecurityCameraService.Binding.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SecurityCameraService\EmExServiceClient.SecurityCameraService.Camera.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SecurityCameraService\SecurityCameraService.wsdl" />
+    <None Include="Connected Services\SecurityCameraService\SecurityCameraService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SecurityCameraService\SecurityCameraService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SecurityCameraService\SecurityCameraService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SecurityCameraService\SecurityCameraService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SecurityCameraService\SecurityCameraService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ContrafactService\" />
     <WCFMetadataStorage Include="Connected Services\ContragentService\" />
     <WCFMetadataStorage Include="Connected Services\DocumentService\" />
+    <WCFMetadataStorage Include="Connected Services\SecurityCameraService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DocumentService\configuration91.svcinfo" />
@@ -382,6 +482,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ContragentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ContrafactService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ContrafactService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ContrafactService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ContrafactService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SecurityCameraService\SecurityCameraService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SecurityCameraService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SecurityCameraService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SecurityCameraService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e83a5e67-3f22-4d21-8844-db84ef908369" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:26900/SecurityCameraService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SecurityCameraService.xsd" MetadataType="Schema" ID="ca2d3bb4-5911-4225-b892-6c019228bcff" SourceId="1" SourceUrl="http://localhost:26900/SecurityCameraService?xsd=xsd4" />
+    <MetadataFile FileName="SecurityCameraService.wsdl" MetadataType="Wsdl" ID="721fc162-2d19-424b-850a-db491e760cc1" SourceId="1" SourceUrl="http://localhost:26900/SecurityCameraService?wsdl" />
+    <MetadataFile FileName="SecurityCameraService1.xsd" MetadataType="Schema" ID="1f356398-8c11-4787-96f5-a0045e1a74ab" SourceId="1" SourceUrl="http://localhost:26900/SecurityCameraService?xsd=xsd3" />
+    <MetadataFile FileName="SecurityCameraService2.xsd" MetadataType="Schema" ID="d963cb66-9543-484a-813f-81df9e13f2ee" SourceId="1" SourceUrl="http://localhost:26900/SecurityCameraService?xsd=xsd2" />
+    <MetadataFile FileName="SecurityCameraService3.xsd" MetadataType="Schema" ID="98925218-7992-4918-b1e2-f82f87d026bb" SourceId="1" SourceUrl="http://localhost:26900/SecurityCameraService?xsd=xsd1" />
+    <MetadataFile FileName="SecurityCameraService4.xsd" MetadataType="Schema" ID="71766326-2458-41f3-a453-df355e4e185a" SourceId="1" SourceUrl="http://localhost:26900/SecurityCameraService?xsd=xsd0" />
+    <MetadataFile FileName="SecurityCameraService.disco" MetadataType="Disco" ID="d8b6febd-8e0f-4745-8707-652ea38f0b41" SourceId="1" SourceUrl="http://localhost:26900/SecurityCameraService?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

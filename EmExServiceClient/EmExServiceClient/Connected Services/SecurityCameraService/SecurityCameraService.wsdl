@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SecurityCameraService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:26900/SecurityCameraService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:26900/SecurityCameraService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:26900/SecurityCameraService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SecurityCamera.Entities" />
+      <xsd:import schemaLocation="http://localhost:26900/SecurityCameraService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:26900/SecurityCameraService?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecurityCameraService_GetCameras_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCameras" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_GetCameras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCamerasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_AddCamera_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCamera" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_AddCamera_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCameraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_DeleteCamera_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCamera" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_DeleteCamera_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCameraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_UpdateCamera_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCamera" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_UpdateCamera_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCameraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_GetBindings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBindings" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_GetBindings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBindingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_AddBinding_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBinding" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_AddBinding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBindingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_DeleteBinding_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBinding" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_DeleteBinding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBindingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_UpdateBinding_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBinding" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_UpdateBinding_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBindingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_SendCameraData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendCameraData" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_SendCameraData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendCameraDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_SendBindingData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendBindingData" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_SendBindingData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendBindingDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_SendData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendData" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_SendData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_LogProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogProcess" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_LogProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_CreateUnloadVideoFragmentsTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUnloadVideoFragmentsTask" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_CreateUnloadVideoFragmentsTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUnloadVideoFragmentsTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_CreateUnloadAndSendVideoTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUnloadAndSendVideoTask" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_CreateUnloadAndSendVideoTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUnloadAndSendVideoTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_StartSendVideoProcessing_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartSendVideoProcessing" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_StartSendVideoProcessing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartSendVideoProcessingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_StopSendVideoProcessing_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopSendVideoProcessing" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_StopSendVideoProcessing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopSendVideoProcessingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_IsSendVideoProcessingStarted_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSendVideoProcessingStarted" />
+  </wsdl:message>
+  <wsdl:message name="ISecurityCameraService_IsSendVideoProcessingStarted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSendVideoProcessingStartedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConnectionStrings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionStrings" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConnectionStrings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionStringsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetVersions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersions" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetVersions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetEndpoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndpoints" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetEndpoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndpointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_ClearCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCache" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_ClearCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCache" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_SetWcfLogging_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWcfLogging" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_SetWcfLogging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWcfLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComment" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsWorking_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsWorking" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_IsWorking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsWorkingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounter" />
+  </wsdl:message>
+  <wsdl:message name="IWmsService_GetCounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCounterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISecurityCameraService">
+    <wsdl:operation name="GetCameras">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/GetCameras" message="tns:ISecurityCameraService_GetCameras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/GetCamerasResponse" message="tns:ISecurityCameraService_GetCameras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCamera">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/AddCamera" message="tns:ISecurityCameraService_AddCamera_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/AddCameraResponse" message="tns:ISecurityCameraService_AddCamera_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCamera">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/DeleteCamera" message="tns:ISecurityCameraService_DeleteCamera_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/DeleteCameraResponse" message="tns:ISecurityCameraService_DeleteCamera_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCamera">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/UpdateCamera" message="tns:ISecurityCameraService_UpdateCamera_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/UpdateCameraResponse" message="tns:ISecurityCameraService_UpdateCamera_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBindings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/GetBindings" message="tns:ISecurityCameraService_GetBindings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/GetBindingsResponse" message="tns:ISecurityCameraService_GetBindings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBinding">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/AddBinding" message="tns:ISecurityCameraService_AddBinding_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/AddBindingResponse" message="tns:ISecurityCameraService_AddBinding_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBinding">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/DeleteBinding" message="tns:ISecurityCameraService_DeleteBinding_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/DeleteBindingResponse" message="tns:ISecurityCameraService_DeleteBinding_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBinding">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/UpdateBinding" message="tns:ISecurityCameraService_UpdateBinding_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/UpdateBindingResponse" message="tns:ISecurityCameraService_UpdateBinding_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendCameraData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/SendCameraData" message="tns:ISecurityCameraService_SendCameraData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/SendCameraDataResponse" message="tns:ISecurityCameraService_SendCameraData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBindingData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/SendBindingData" message="tns:ISecurityCameraService_SendBindingData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/SendBindingDataResponse" message="tns:ISecurityCameraService_SendBindingData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/SendData" message="tns:ISecurityCameraService_SendData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/SendDataResponse" message="tns:ISecurityCameraService_SendData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/LogProcess" message="tns:ISecurityCameraService_LogProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/LogProcessResponse" message="tns:ISecurityCameraService_LogProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUnloadVideoFragmentsTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/CreateUnloadVideoFragmentsTask" message="tns:ISecurityCameraService_CreateUnloadVideoFragmentsTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/CreateUnloadVideoFragmentsTaskResponse" message="tns:ISecurityCameraService_CreateUnloadVideoFragmentsTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUnloadAndSendVideoTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/CreateUnloadAndSendVideoTask" message="tns:ISecurityCameraService_CreateUnloadAndSendVideoTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/CreateUnloadAndSendVideoTaskResponse" message="tns:ISecurityCameraService_CreateUnloadAndSendVideoTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSendVideoProcessing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/StartSendVideoProcessing" message="tns:ISecurityCameraService_StartSendVideoProcessing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/StartSendVideoProcessingResponse" message="tns:ISecurityCameraService_StartSendVideoProcessing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopSendVideoProcessing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/StopSendVideoProcessing" message="tns:ISecurityCameraService_StopSendVideoProcessing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/StopSendVideoProcessingResponse" message="tns:ISecurityCameraService_StopSendVideoProcessing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSendVideoProcessingStarted">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISecurityCameraService/IsSendVideoProcessingStarted" message="tns:ISecurityCameraService_IsSendVideoProcessingStarted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISecurityCameraService/IsSendVideoProcessingStartedResponse" message="tns:ISecurityCameraService_IsSendVideoProcessingStarted_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IWmsService">
+    <wsdl:operation name="IsAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/IsAlive" message="tns:IWmsService_IsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/IsAliveResponse" message="tns:IWmsService_IsAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionStrings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetConnectionStrings" message="tns:IWmsService_GetConnectionStrings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetConnectionStringsResponse" message="tns:IWmsService_GetConnectionStrings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetVersions" message="tns:IWmsService_GetVersions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetVersionsResponse" message="tns:IWmsService_GetVersions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEndpoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetEndpoints" message="tns:IWmsService_GetEndpoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetEndpointsResponse" message="tns:IWmsService_GetEndpoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetConfiguration" message="tns:IWmsService_GetConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetConfigurationResponse" message="tns:IWmsService_GetConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearCache">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/ClearCache" message="tns:IWmsService_ClearCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/ClearCacheResponse" message="tns:IWmsService_ClearCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCache">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetCache" message="tns:IWmsService_GetCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetCacheResponse" message="tns:IWmsService_GetCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetWcfLogging">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/SetWcfLogging" message="tns:IWmsService_SetWcfLogging_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/SetWcfLoggingResponse" message="tns:IWmsService_SetWcfLogging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetComment" message="tns:IWmsService_GetComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetCommentResponse" message="tns:IWmsService_GetComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsWorking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/IsWorking" message="tns:IWmsService_IsWorking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/IsWorkingResponse" message="tns:IWmsService_IsWorking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWmsService/GetCounter" message="tns:IWmsService_GetCounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWmsService/GetCounterResponse" message="tns:IWmsService_GetCounter_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISecurityCameraService" type="tns:ISecurityCameraService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCameras">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/GetCameras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCamera">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/AddCamera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCamera">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/DeleteCamera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCamera">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/UpdateCamera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBindings">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/GetBindings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBinding">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/AddBinding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBinding">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/DeleteBinding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBinding">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/UpdateBinding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendCameraData">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/SendCameraData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBindingData">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/SendBindingData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendData">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/SendData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogProcess">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/LogProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUnloadVideoFragmentsTask">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/CreateUnloadVideoFragmentsTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUnloadAndSendVideoTask">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/CreateUnloadAndSendVideoTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSendVideoProcessing">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/StartSendVideoProcessing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopSendVideoProcessing">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/StopSendVideoProcessing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSendVideoProcessingStarted">
+      <soap:operation soapAction="http://tempuri.org/ISecurityCameraService/IsSendVideoProcessingStarted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecurityCameraService">
+    <wsdl:port name="BasicHttpBinding_ISecurityCameraService" binding="tns:BasicHttpBinding_ISecurityCameraService">
+      <soap:address location="http://localhost:26901/SecurityCameraService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

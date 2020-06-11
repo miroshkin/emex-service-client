@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EmExServiceClient.DocumentService;
+using EmExServiceClient.Intraservice;
 using EmExServiceClient.Tasks;
 
 namespace EmExServiceClient
@@ -12,7 +13,7 @@ namespace EmExServiceClient
     {
         static void Main(string[] args)
         {
-            IExecutable task = new Intraservice196463(); 
+            IExecutable task = new SecurityCamera(); 
             task.Execute();
         }
 }

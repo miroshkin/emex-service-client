@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" />
+  <xs:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Emex.Communication" />
+  <xs:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:9923/ContrafactService/?xsd=xsd8" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="GetContrafactsDataList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="filter" nillable="true" type="q1:ContrafactFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContrafactsDataListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetContrafactsDataListResult" nillable="true" type="q2:OperationResultArrayOfContrafactInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCounterfeitFeatures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="features" nillable="true" type="q3:ArrayOfContrafactFeature" />
+        <xs:element minOccurs="0" name="detailName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="operatorUserId" type="xs:int" />
+        <xs:element minOccurs="0" name="isPublish" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCounterfeitFeaturesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="AddCounterfeitFeaturesResult" nillable="true" type="q4:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeDetailNaming">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="userAgent" nillable="true" type="q5:UserAgent" />
+        <xs:element minOccurs="0" name="detailNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detailId" type="xs:long" />
+        <xs:element minOccurs="0" name="makeName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="previousDetailNameRus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newDetailNameRus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeDetailNamingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="ChangeDetailNamingResult" nillable="true" type="q6:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitsData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitsDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCounterfeitsDataResult" nillable="true" type="q7:OperationResultContrafactInfoDetalization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnContrafactToWork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnContrafactToWorkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="ReturnContrafactToWorkResult" nillable="true" type="q8:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateActContrafact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateActContrafactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CreateActContrafactResult" nillable="true" type="q9:OperationResultWithFiles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitModelsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="filter" nillable="true" type="q10:CounterfeitModelFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitModelsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCounterfeitModelsListResult" nillable="true" type="q11:OperationResultArrayOfCounterfeitModelInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommentsByContrafactId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommentsByContrafactIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCommentsByContrafactIdResult" nillable="true" type="q12:OperationResultArrayOfContrafactComment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentToContrafact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentToContrafactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="AddCommentToContrafactResult" nillable="true" type="q13:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCounterfeitPretension">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="counterfeitPretensionData" nillable="true" type="q14:CounterfeitPretensionData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCounterfeitPretensionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="InsertCounterfeitPretensionResult" nillable="true" type="q15:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitSupplierDataList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitSupplierDataListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCounterfeitSupplierDataListResult" nillable="true" type="q16:OperationResultArrayOfCounterfeitSupplierInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitModelData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="modelId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterfeitModelDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCounterfeitModelDataResult" nillable="true" type="q17:OperationResultCounterfeitModelInfoDetalization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCounterfeitModelFeatures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="features" nillable="true" type="q18:ArrayOfCounterfeitModelFeature" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCounterfeitModelFeaturesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="AddCounterfeitModelFeaturesResult" nillable="true" type="q19:OperationResultArrayOfCounterfeitModelFeature" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCounterfeitModelFeatures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="picsToDelete" nillable="true" type="q20:ArrayOfCounterfeitModelFeature" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCounterfeitModelFeaturesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteCounterfeitModelFeaturesResult" nillable="true" type="q21:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContrafactModelFeature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactModelId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="imagesFileId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" name="isMain" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContrafactModelFeatureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateContrafactModelFeatureResult" nillable="true" type="q22:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentToContrafactModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="modelId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="commentText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentToContrafactModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="AddCommentToContrafactModelResult" nillable="true" type="q23:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommentsByContrafactModelId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommentsByContrafactModelIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetCommentsByContrafactModelIdResult" nillable="true" type="q24:OperationResultArrayOfContrafactComment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotificationToSupplier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="expertiseDetailId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendNotificationToSupplierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendNotificationToSupplierResult" nillable="true" type="q25:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeModelPlace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="modelList" nillable="true" type="q26:ArrayOfstring" />
+        <xs:element minOccurs="0" name="modelPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeModelPlaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="ChangeModelPlaceResult" nillable="true" type="q27:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="detailId" type="xs:long" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="detailNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detailNameRus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="makeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CreateModelResult" nillable="true" type="q28:OperationResultStickerDescription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailAboutCounterfeitModel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="messageType" type="q29:MessageType" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="modelInfo" nillable="true" type="q30:CounterfeitModelInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailAboutCounterfeitModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SendEmailAboutCounterfeitModelResult" nillable="true" type="q31:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelStickerDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detailNum" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detailName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="makeName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="createDateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModelStickerDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetModelStickerDescriptionResult" nillable="true" type="q32:OperationResultStickerDescription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuppliersFilterValues">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuppliersFilterValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="GetSuppliersFilterValuesResult" nillable="true" type="q33:ArrayOfSupplier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDocsExpects">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDocsExpectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="ProcessDocsExpectsResult" nillable="true" type="q34:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContrafactListOnFtp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateContrafactListOnFtpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="UpdateContrafactListOnFtpResult" nillable="true" type="q35:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateContrafactQuestions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateContrafactQuestionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CreateContrafactQuestionsResult" nillable="true" type="q36:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBuhOperacia">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBuhOperaciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CreateBuhOperaciaResult" nillable="true" type="q37:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactGroupId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="DeleteArticleResult" nillable="true" type="q38:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetContrafactAppeal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contrafactGroupId" type="xs:long" />
+        <xs:element minOccurs="0" name="hasAppeal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetContrafactAppealResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SetContrafactAppealResult" nillable="true" type="q39:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPossibleCounterfeit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="possibleCounterfeitDetails" nillable="true" type="q40:ArrayOfPossibleCounterfeitDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPossibleCounterfeitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="GetPossibleCounterfeitResult" nillable="true" type="q41:OperationResultArrayOfPossibleCounterfeitDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitConfirmed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="confirmedCounterfeitDetails" nillable="true" type="q42:ArrayOfPossibleCounterfeitDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitConfirmedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CounterfeitConfirmedResult" nillable="true" type="q43:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitNotConfirmed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="confirmedAuthenticDetails" nillable="true" type="q44:ArrayOfPossibleCounterfeitDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitNotConfirmedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CounterfeitNotConfirmedResult" nillable="true" type="q45:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitRefunded">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="refundedCounterfeitDetails" nillable="true" type="q46:ArrayOfPossibleCounterfeitDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitRefundedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CounterfeitRefundedResult" nillable="true" type="q47:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitProcessed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Counterfeit.Entities.Contrafact" minOccurs="0" name="counterfeitProcessed" nillable="true" type="q48:CounterfeitProcessed" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CounterfeitProcessedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="CounterfeitProcessedResult" nillable="true" type="q49:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDenyForOrders">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDenyForOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Emex.Communication" minOccurs="0" name="SetDenyForOrdersResult" nillable="true" type="q50:OperationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAliveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConnectionStrings">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConnectionStringsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetConnectionStringsResult" nillable="true" type="q51:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetVersionsResult" nillable="true" type="q52:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEndpoints">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEndpointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEndpointsResult" nillable="true" type="q53:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfiguration">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetConfigurationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearCache">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearCacheResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCache">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCacheResult" nillable="true" type="q54:ArrayOfKeyValueOfstringArrayOfKeyValueOfstringstringty7Ep6D1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWcfLogging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isEnabled" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWcfLoggingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCommentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsWorking">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsWorkingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsWorkingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCounterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.microsoft.com/Message" name="GetCounterResult" type="q55:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.microsoft.com/Message" name="GetStatusResult" type="q56:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

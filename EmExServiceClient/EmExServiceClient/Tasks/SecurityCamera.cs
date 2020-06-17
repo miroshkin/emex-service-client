@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using EmExServiceClient.SecurityCameraService;
 
@@ -27,10 +28,19 @@ namespace EmExServiceClient.Tasks
 
                 var bindings = client.GetBindings().Where(b => list.Contains(b.BindingId));
 
-                foreach (var binding in bindings)
+                for (int i = 0; i < 5; i++)
                 {
-                    client.SendData("COMP265","2824", binding.Code,"Test");
+                    string message = $"TEST {(i + 1) * 111} HILOAD";
+                    
+                    foreach (var binding in bindings)
+                    {
+                        client.SendData("COMP265","2824", binding.Code,message);
+                        Thread.Sleep(1000);
+
+                    }
                 }
+
+                
             }
             catch (Exception e)
             {

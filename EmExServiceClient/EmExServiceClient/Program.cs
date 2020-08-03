@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EmExServiceClient.DocumentService;
-using EmExServiceClient.Intraservice;
+﻿using EmExServiceClient.Intraservice;
 using EmExServiceClient.Tasks;
 
 namespace EmExServiceClient
@@ -13,7 +7,7 @@ namespace EmExServiceClient
     {
         static void Main(string[] args)
         {
-            IExecutable task = new SecurityCamera(); 
+            IExecutable task = new Intraservice201221(); 
             task.Execute();
         }
 }

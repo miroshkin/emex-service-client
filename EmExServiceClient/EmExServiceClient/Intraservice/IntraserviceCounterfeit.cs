@@ -12,11 +12,11 @@ namespace EmExServiceClient.Intraservice
     {
         public void Execute()
         {
-            //ContrafactServiceClient client = new ContrafactServiceClient();
-            //client.ProcessDocsExpects();
-            DocumentPortalClient client = new DocumentPortalClient();
-            var result = client.CreateCustomerReturnsAct(new AuthentificationData(), 1, DocumentOptions.ReturnPDF, 1);
-            EmExFile.SaveAndOpen(result);
+            ContrafactServiceClient client = new ContrafactServiceClient();
+            client.ProcessDocsExpects();
+            //DocumentPortalClient client = new DocumentPortalClient();
+            //var result = client.CreateCustomerReturnsAct(new AuthentificationData(), 1, DocumentOptions.ReturnPDF, 1);
+            //EmExFile.SaveAndOpen(result);
 
         }
     }

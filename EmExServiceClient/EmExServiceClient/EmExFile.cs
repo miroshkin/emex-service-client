@@ -15,10 +15,13 @@ namespace EmExServiceClient
 
         public static void Save(OperationResultWithFiles result)
         {
-            var reportBytes = result.Files[0].Content[0];
-            var filename = result.Files[0].Name;
-            Directory.CreateDirectory(_reportFolder);
-            File.WriteAllBytes(Path.Combine(_reportFolder, filename),reportBytes);
+            foreach (var fileDescription in result.Files)
+            {
+                var reportBytes = fileDescription.Content[0];
+                var filename = fileDescription.Name;
+                Directory.CreateDirectory(_reportFolder);
+                File.WriteAllBytes(Path.Combine(_reportFolder, filename),reportBytes);
+            }
         }
 
         public static void SaveAndOpen(OperationResultWithFiles result)
@@ -29,7 +32,10 @@ namespace EmExServiceClient
 
         private static void Open(OperationResultWithFiles result)
         {
-            System.Diagnostics.Process.Start(Path.Combine(_reportFolder, result.Files[0].Name));
+            foreach (var file in result.Files)
+            {
+                System.Diagnostics.Process.Start(Path.Combine(_reportFolder, file.Name));
+            }
         }
     }
 }
